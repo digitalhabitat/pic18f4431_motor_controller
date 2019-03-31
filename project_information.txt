@@ -1,6 +1,6 @@
 <Application Description for Project Goes Here>
 
-Project Owner(s): Michael Miller
+Project Owner(s): Michael Miller    
 Author(s):  Michael Miller
 Hardware Platform: PIC18F4431-I/P
 Debuggers Used: MPLAB PICkit 4
