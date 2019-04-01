@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/pic18f4431/debug/ECE471_pic18_motor_controller.X.debug.hex">
+  <executable name="dist/pic18f4431/debug/pic18f4431_motor_controller.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>16384</length>
-      <used>326</used>
-      <free>16058</free>
+      <used>834</used>
+      <free>15550</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>768</length>
-      <used>4</used>
-      <free>764</free>
+      <used>74</used>
+      <free>694</free>
     </memory>
   </executable>
 </project>

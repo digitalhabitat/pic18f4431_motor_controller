@@ -541,75 +541,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "56 configuration_bits.c
 [p x OSC = HS ]
-"57
-[p x FCMEN = ON ]
 "58
+[p x FCMEN = ON ]
+"59
 [p x IESO = ON ]
-"61
-[p x PWRTEN = OFF ]
 "62
+[p x PWRTEN = OFF ]
+"64
 [p x BOREN = OFF ]
-"66
-[p x WDTEN = OFF ]
-"67
-[p x WDPS = 32768 ]
 "68
+[p x WDTEN = OFF ]
+"69
+[p x WDPS = 32768 ]
+"70
 [p x WINEN = OFF ]
-"71
-[p x PWMPIN = OFF ]
-"72
-[p x LPOL = HIGH ]
 "73
-[p x HPOL = HIGH ]
+[p x PWMPIN = OFF ]
 "74
+[p x LPOL = HIGH ]
+"75
+[p x HPOL = HIGH ]
+"76
 [p x T1OSCMX = ON ]
-"77
-[p x FLTAMX = RC1 ]
-"78
-[p x SSPMX = RC7 ]
 "79
-[p x PWM4MX = RB5 ]
+[p x FLTAMX = RC1 ]
 "80
-[p x EXCLKMX = RC3 ]
+[p x SSPMX = RC7 ]
 "81
-[p x MCLRE = ON ]
+[p x PWM4MX = RB5 ]
+"82
+[p x EXCLKMX = RC3 ]
 "84
+[p x MCLRE = OFF ]
+"87
 [p x STVREN = ON ]
-"85
-[p x LVP = OFF ]
 "88
-[p x CP0 = OFF ]
-"89
-[p x CP1 = OFF ]
-"90
-[p x CP2 = OFF ]
+[p x LVP = OFF ]
 "91
-[p x CP3 = OFF ]
+[p x CP0 = OFF ]
+"92
+[p x CP1 = OFF ]
+"93
+[p x CP2 = OFF ]
 "94
+[p x CP3 = OFF ]
+"97
 [p x CPB = OFF ]
-"95
-[p x CPD = OFF ]
 "98
-[p x WRT0 = OFF ]
-"99
-[p x WRT1 = OFF ]
-"100
-[p x WRT2 = OFF ]
+[p x CPD = OFF ]
 "101
-[p x WRT3 = OFF ]
+[p x WRT0 = OFF ]
+"102
+[p x WRT1 = OFF ]
+"103
+[p x WRT2 = OFF ]
 "104
+[p x WRT3 = OFF ]
+"107
 [p x WRTC = OFF ]
-"105
+"108
 [p x WRTB = OFF ]
-"106
-[p x WRTD = OFF ]
 "109
-[p x EBTR0 = OFF ]
-"110
-[p x EBTR1 = OFF ]
-"111
-[p x EBTR2 = OFF ]
+[p x WRTD = OFF ]
 "112
-[p x EBTR3 = OFF ]
+[p x EBTR0 = OFF ]
+"113
+[p x EBTR1 = OFF ]
+"114
+[p x EBTR2 = OFF ]
 "115
+[p x EBTR3 = OFF ]
+"118
 [p x EBTRB = OFF ]

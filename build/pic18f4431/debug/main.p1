@@ -6,6 +6,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13 ./user.h
 [; ;./user.h: 13: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
+"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1203 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
 [s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -566,47 +568,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"34 main.c
-[; ;main.c: 34: void main(void)
+"35 main.c
+[; ;main.c: 35: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"35
-[; ;main.c: 35: {
+"36
+[; ;main.c: 36: {
 {
 [e :U _main ]
 [f ]
-"37
-[; ;main.c: 37:     ConfigureOscillator();
+"38
+[; ;main.c: 38:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"40
-[; ;main.c: 40:     InitApp();
+"41
+[; ;main.c: 41:     InitApp();
 [e ( _InitApp ..  ]
 "45
-[; ;main.c: 45:     while(1)
-[e :U 316 ]
+[; ;main.c: 45:     char x;
+[v _x `uc ~T0 @X0 1 a ]
 "46
-[; ;main.c: 46:     {
-{
+[; ;main.c: 46:     int val;
+[v _val `i ~T0 @X0 1 a ]
 "47
-[; ;main.c: 47:         PORTBbits.RB0 = 1;
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"48
-[; ;main.c: 48:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 47:     val = 96;
+[e = _val -> 96 `i ]
 "49
-[; ;main.c: 49:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 49:     while(1)
+[e :U 318 ]
 "50
-[; ;main.c: 50:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"51
-[; ;main.c: 51:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 50:     {
+{
 "52
-[; ;main.c: 52:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 52:         printf("hello world/r/n");
+[e ( _printf :s 1C ]
+"53
+[; ;main.c: 53:         PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "54
-[; ;main.c: 54:         PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 54:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "55
 [; ;main.c: 55:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
@@ -619,16 +618,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [; ;main.c: 58:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"59
-[; ;main.c: 59:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"60
+[; ;main.c: 60:         PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "61
-[; ;main.c: 61:     }
-}
-[e :U 315 ]
-[e $U 316  ]
-[e :U 317 ]
+[; ;main.c: 61:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"62
+[; ;main.c: 62:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "63
-[; ;main.c: 63: }
-[e :UE 314 ]
+[; ;main.c: 63:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"64
+[; ;main.c: 64:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"65
+[; ;main.c: 65:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"67
+[; ;main.c: 67:     }
 }
+[e :U 317 ]
+[e $U 318  ]
+[e :U 319 ]
+"69
+[; ;main.c: 69: }
+[e :UE 316 ]
+}
+[p f _printf 8388608 ]
+[a 1C 104 101 108 108 111 32 119 111 114 108 100 47 114 47 110 0 ]

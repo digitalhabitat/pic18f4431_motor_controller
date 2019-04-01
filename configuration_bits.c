@@ -54,11 +54,13 @@
 
 // CONFIG1H
 #pragma config OSC = HS         // Oscillator Selection bits (HS oscillator)
+//#pragma config OSC = IRC        // Oscillator Selection bits (Internal oscillator block, CLKO function on RA6 and port function on RA7)
 #pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor enabled)
 #pragma config IESO = ON        // Internal External Oscillator Switchover bit (Internal External Switchover mode enabled)
 
 // CONFIG2L
 #pragma config PWRTEN = OFF     // Power-up Timer Enable bit (PWRT disabled)
+//#pragma config PWRTEN = ON      // Power-up Timer Enable bit (PWRT enabled)
 #pragma config BOREN = OFF      // Brown-out Reset Enable bits (Brown-out Reset disabled)
 // BORV = No Setting
 
@@ -78,7 +80,8 @@
 #pragma config SSPMX = RC7      // SSP I/O MUX bit (SCK/SCL clocks and SDA/SDI data are multiplexed with RC5 and RC4, respectively. SDO output is multiplexed with RC7.)
 #pragma config PWM4MX = RB5     // PWM4 MUX bit (PWM4 output is multiplexed with RB5)
 #pragma config EXCLKMX = RC3    // TMR0/T5CKI External clock MUX bit (TMR0/T5CKI external clock input is multiplexed with RC3)
-#pragma config MCLRE = ON       // MCLR Pin Enable bit (Enabled)
+//#pragma config MCLRE = ON       // MCLR Pin Enable bit (Enabled)
+#pragma config MCLRE = OFF      // MCLR Pin Enable bit (Disabled)
 
 // CONFIG4L
 #pragma config STVREN = ON      // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
