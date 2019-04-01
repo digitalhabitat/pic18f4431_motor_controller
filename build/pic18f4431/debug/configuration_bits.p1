@@ -547,69 +547,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x IESO = ON ]
 "62
 [p x PWRTEN = OFF ]
-"63
+"64
 [p x BOREN = OFF ]
-"67
-[p x WDTEN = OFF ]
 "68
-[p x WDPS = 32768 ]
+[p x WDTEN = OFF ]
 "69
+[p x WDPS = 32768 ]
+"70
 [p x WINEN = OFF ]
-"72
-[p x PWMPIN = OFF ]
 "73
-[p x LPOL = HIGH ]
+[p x PWMPIN = OFF ]
 "74
-[p x HPOL = HIGH ]
+[p x LPOL = HIGH ]
 "75
+[p x HPOL = HIGH ]
+"76
 [p x T1OSCMX = ON ]
-"78
-[p x FLTAMX = RC1 ]
 "79
-[p x SSPMX = RC7 ]
+[p x FLTAMX = RC1 ]
 "80
-[p x PWM4MX = RB5 ]
+[p x SSPMX = RC7 ]
 "81
-[p x EXCLKMX = RC3 ]
+[p x PWM4MX = RB5 ]
 "82
-[p x MCLRE = ON ]
-"85
+[p x EXCLKMX = RC3 ]
+"84
+[p x MCLRE = OFF ]
+"87
 [p x STVREN = ON ]
-"86
+"88
 [p x LVP = OFF ]
-"89
-[p x CP0 = OFF ]
-"90
-[p x CP1 = OFF ]
 "91
-[p x CP2 = OFF ]
+[p x CP0 = OFF ]
 "92
+[p x CP1 = OFF ]
+"93
+[p x CP2 = OFF ]
+"94
 [p x CP3 = OFF ]
-"95
+"97
 [p x CPB = OFF ]
-"96
+"98
 [p x CPD = OFF ]
-"99
-[p x WRT0 = OFF ]
-"100
-[p x WRT1 = OFF ]
 "101
-[p x WRT2 = OFF ]
+[p x WRT0 = OFF ]
 "102
+[p x WRT1 = OFF ]
+"103
+[p x WRT2 = OFF ]
+"104
 [p x WRT3 = OFF ]
-"105
-[p x WRTC = OFF ]
-"106
-[p x WRTB = OFF ]
 "107
+[p x WRTC = OFF ]
+"108
+[p x WRTB = OFF ]
+"109
 [p x WRTD = OFF ]
-"110
-[p x EBTR0 = OFF ]
-"111
-[p x EBTR1 = OFF ]
 "112
-[p x EBTR2 = OFF ]
+[p x EBTR0 = OFF ]
 "113
+[p x EBTR1 = OFF ]
+"114
+[p x EBTR2 = OFF ]
+"115
 [p x EBTR3 = OFF ]
-"116
+"118
 [p x EBTRB = OFF ]

@@ -1,6 +1,45 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T36 __interrupt high_priority ]
+"7313 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7313:     struct {
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7323
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7323:     struct {
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7333
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7333:     struct {
+[s S310 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S310 . . GIEL GIEH ]
+"7312
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7312: typedef union {
+[u S307 `S308 1 `S309 1 `S310 1 ]
+[n S307 . . . . ]
+"7339
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7339: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS307 ~T0 @X0 0 e@4082 ]
+"6864
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
+[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"2506
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2506:     struct {
+[s S92 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S92 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"2516
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2516:     struct {
+[s S93 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S93 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"2505
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2505: typedef union {
+[u S91 `S92 1 `S93 1 ]
+[n S91 . . . ]
+"2527
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2527: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
+[v _TRISBbits `VS91 ~T0 @X0 0 e@3987 ]
+"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [t T37 __interrupt low_priority ]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
@@ -551,20 +590,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _high_isr ]
 [f ]
+"62
+[; ;interrupts.c: 62:       if(INTCONbits.T0IF == 1)
+[e $ ! == -> . . _INTCONbits 1 2 `i -> 1 `i 317  ]
 "63
-[; ;interrupts.c: 63: }
-[e :UE 314 ]
+[; ;interrupts.c: 63:       {
+{
+"64
+[; ;interrupts.c: 64:         TMR0 = -12500;
+[e = _TMR0 -> -U -> 12500 `i `us ]
+"68
+[; ;interrupts.c: 68:         TRISBbits.RB1 = !TRISBbits.RB1;
+[e = . . _TRISBbits 1 1 -> -> ! != -> . . _TRISBbits 1 1 `i -> 0 `i `i `uc ]
+"70
+[; ;interrupts.c: 70:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"71
+[; ;interrupts.c: 71:         printf("hello world!/r/n");
+[e ( _printf :s 1C ]
+"73
+[; ;interrupts.c: 73:       }
+}
+[e :U 317 ]
+"76
+[; ;interrupts.c: 76: }
+[e :UE 316 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
-"67
-[; ;interrupts.c: 67: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
+"80
+[; ;interrupts.c: 80: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 [v _low_isr `(v ~T37 @X0 1 ef ]
-"75
-[; ;interrupts.c: 75: {
+"88
+[; ;interrupts.c: 88: {
 {
 [e :U _low_isr ]
 [f ]
-"102
-[; ;interrupts.c: 102: }
-[e :UE 315 ]
+"115
+[; ;interrupts.c: 115: }
+[e :UE 318 ]
 }
+[p f _printf 8388608 ]
+[a 1C 104 101 108 108 111 32 119 111 114 108 100 33 47 114 47 110 0 ]

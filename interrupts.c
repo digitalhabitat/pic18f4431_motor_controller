@@ -14,7 +14,7 @@
 
 #include <stdint.h>         /* For uint8_t definition */
 #include <stdbool.h>        /* For true/false definition */
-
+#include <stdio.h>
 #endif
 
 /******************************************************************************/
@@ -40,24 +40,37 @@ void high_isr(void)
       Do not use a seperate if block for each interrupt flag to avoid run
       time errors. */
 
-#if 0
+#if 1
     
       /* TODO Add High Priority interrupt routine code here. */
 
       /* Determine which flag generated the interrupt */
-      if(<Interrupt Flag 1>)
+      
+      /*if(<Interrupt Flag 1>)
       {
-          <Interrupt Flag 1=0>; /* Clear Interrupt Flag 1 */
+          <Interrupt Flag 1=0>; Clear Interrupt Flag 1
       }
       else if (<Interrupt Flag 2>)
       {
-          <Interrupt Flag 2=0>; /* Clear Interrupt Flag 2 */
+          <Interrupt Flag 2=0>; Clear Interrupt Flag 2 
       }
       else
       {
-          /* Unhandled interrupts */
-      }
+           Unhandled interrupts
+      }*/
 
+      if(INTCONbits.T0IF == 1)
+      {
+        TMR0 = -12500; // reload timer value
+        
+        // invert the LED
+        //LATBbits.LATB0 = !LATBbits.LATB0;
+        TRISBbits.RB1 = !TRISBbits.RB1;
+        
+        INTCONbits.T0IF = 0;
+        printf("hello world!/r/n");
+        
+      }
 #endif
 
 }

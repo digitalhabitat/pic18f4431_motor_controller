@@ -5136,6 +5136,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config PWRTEN = OFF
+
 #pragma config BOREN = OFF
 
 
@@ -5155,7 +5156,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config SSPMX = RC7
 #pragma config PWM4MX = RB5
 #pragma config EXCLKMX = RC3
-#pragma config MCLRE = ON
+
+#pragma config MCLRE = OFF
 
 
 #pragma config STVREN = ON
@@ -5190,5 +5192,5 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 126 "configuration_bits.c"
+# 128 "configuration_bits.c"
 

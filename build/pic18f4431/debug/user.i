@@ -5225,10 +5225,11 @@ typedef uint32_t uint_fast32_t;
 
 
 # 1 "./user.h" 1
-# 13 "./user.h"
-void InitApp(void);
-void init_usart(void);
-# 21 "user.c" 2
+
+
+
+
+
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
@@ -5365,7 +5366,17 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 22 "user.c" 2
+# 7 "./user.h" 2
+
+
+
+
+
+
+
+void InitApp(void);
+void init_usart(void);
+# 21 "user.c" 2
 
 
 
@@ -5379,6 +5390,7 @@ void InitApp(void)
 
 
     TRISBbits.TRISB0 = 0;
+    TRISBbits.RB1 = 0;
 
 
     init_usart();
@@ -5409,6 +5421,26 @@ void init_usart(void)
 
 
 
+
+
+}
+
+void init_timer(void)
+{
+
+    T0CONbits.TMR0ON = 0;
+    T0CONbits.T016BIT = 1;
+    T0CONbits.T0CS = 0;
+    T0CONbits.PSA = 0b111;
+    T0CONbits.T0PS = 0b111;
+
+    TMR0 = -12500;
+    INTCONbits.T0IF = 0;
+    INTCONbits.T0IE = 1;
+    RCONbits.IPEN = 0;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+    T0CONbits.TMR0ON = 1;
 
 
 }

@@ -3,6 +3,7 @@
 /******************************************************************************/
 
 /* TODO Application specific user parameters used in user.c may go here */
+#include <stdio.h>
 
 /******************************************************************************/
 /* User Function Prototypes                                                   */

@@ -18,7 +18,6 @@
 #endif
 
 #include "user.h"
-#include <stdio.h>
 
 /******************************************************************************/
 /* User Functions                                                             */
@@ -32,6 +31,7 @@ void InitApp(void)
 
     /* Setup analog functionality and port direction */
     TRISBbits.TRISB0 = 0; // enable port B bit 0 as output
+    TRISBbits.RB1 = 0;
     
     /* Initialize peripherals */
     init_usart();
@@ -64,6 +64,26 @@ void init_usart(void)
     // PIE1bits.TXIE = 1;
     // INTCONbits.GIE = 1;
     // INTCONbits.PEIE = 1;  
+}
+
+void init_timer(void)
+{
+    
+    T0CONbits.TMR0ON = 0; // stop the timer
+    T0CONbits.T016BIT = 1; // timer configured as 16-bit
+    T0CONbits.T0CS = 0; // use internal clock
+    T0CONbits.PSA = 1; // don't use prescaler
+    T0CONbits.T0PS = 0;
+    // prescaler 1:256 (?0b? is a prefix for binary)
+    TMR0 = -12500; // setup initial timer value
+    INTCONbits.T0IF = 0; // reset timer interrupt flag
+    INTCONbits.T0IE = 1; // enable timer interrupts
+    RCONbits.IPEN = 0; // do not use priorities
+    INTCONbits.PEIE = 1; // enable peripheral interrupts
+    INTCONbits.GIE = 1; // enable interrupts globally
+    T0CONbits.TMR0ON = 1;
+
+
 }
 
 void putch(unsigned char byte) {

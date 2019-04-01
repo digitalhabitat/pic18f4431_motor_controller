@@ -3,11 +3,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21 ./system.h
 [; ;./system.h: 21: void ConfigureOscillator(void);
 [v _ConfigureOscillator `(v ~T0 @X0 0 ef ]
-"13 ./user.h
-[; ;./user.h: 13: void InitApp(void);
+"14 ./user.h
+[; ;./user.h: 14: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
-"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1203 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
 [s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -27,6 +25,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "185 /opt/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delaywdt `JF2766 ~T0 @X0 0 e ]
 [p i __delaywdt ]
+"6794 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6794:     struct {
+[s S295 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S295 . T0PS PSA T0SE T0CS T016BIT TMR0ON ]
+"6802
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6802:     struct {
+[s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S296 . T0PS0 T0PS1 T0PS2 T0PS3 ]
+"6793
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6793: typedef union {
+[u S294 `S295 1 `S296 1 ]
+[n S294 . . . ]
+"6809
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6809: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS294 ~T0 @X0 0 e@4053 ]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
 [; <" DFLTCON equ 0F60h ;# ">
@@ -568,41 +581,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"35 main.c
-[; ;main.c: 35: void main(void)
+"34 main.c
+[; ;main.c: 34: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"36
-[; ;main.c: 36: {
+"35
+[; ;main.c: 35: {
 {
 [e :U _main ]
 [f ]
-"38
-[; ;main.c: 38:     ConfigureOscillator();
+"37
+[; ;main.c: 37:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"41
-[; ;main.c: 41:     InitApp();
+"40
+[; ;main.c: 40:     InitApp();
 [e ( _InitApp ..  ]
-"45
-[; ;main.c: 45:     char x;
+"44
+[; ;main.c: 44:     char x;
 [v _x `uc ~T0 @X0 1 a ]
-"46
-[; ;main.c: 46:     int val;
+"45
+[; ;main.c: 45:     int val;
 [v _val `i ~T0 @X0 1 a ]
-"47
-[; ;main.c: 47:     val = 96;
+"46
+[; ;main.c: 46:     val = 96;
 [e = _val -> 96 `i ]
-"49
-[; ;main.c: 49:     while(1)
+"48
+[; ;main.c: 48:     while(1)
 [e :U 318 ]
-"50
-[; ;main.c: 50:     {
+"49
+[; ;main.c: 49:     {
 {
 "52
-[; ;main.c: 52:         printf("hello world/r/n");
-[e ( _printf :s 1C ]
-"53
-[; ;main.c: 53:         PORTBbits.RB0 = 1;
+[; ;main.c: 52:         PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"53
+[; ;main.c: 53:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "54
 [; ;main.c: 54:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
@@ -616,11 +629,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 57:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "58
-[; ;main.c: 58:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[; ;main.c: 58:         PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"59
+[; ;main.c: 59:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "60
-[; ;main.c: 60:         PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 60:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "61
 [; ;main.c: 61:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
@@ -631,20 +647,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 63:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "64
-[; ;main.c: 64:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 64:        T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
+[e = . . _T0CONbits 0 5 -> -> ! != -> . . _T0CONbits 0 5 `i -> 0 `i `i `uc ]
 "65
-[; ;main.c: 65:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"67
-[; ;main.c: 67:     }
+[; ;main.c: 65:     }
 }
 [e :U 317 ]
 [e $U 318  ]
 [e :U 319 ]
-"69
-[; ;main.c: 69: }
+"67
+[; ;main.c: 67: }
 [e :UE 316 ]
 }
-[p f _printf 8388608 ]
-[a 1C 104 101 108 108 111 32 119 111 114 108 100 47 114 47 110 0 ]

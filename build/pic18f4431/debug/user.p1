@@ -14,8 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2527
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2527: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
 [v _TRISBbits `VS91 ~T0 @X0 0 e@3987 ]
-"14 ./user.h
-[; ;./user.h: 14: void init_usart(void);
+"15 ./user.h
+[; ;./user.h: 15: void init_usart(void);
 [v _init_usart `(v ~T0 @X0 0 ef ]
 "2728 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2728:     struct {
@@ -112,6 +112,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4868
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4868: extern volatile unsigned char SPBRG1 __attribute__((address(0xFAF)));
 [v _SPBRG1 `Vuc ~T0 @X0 0 e@4015 ]
+"6794
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6794:     struct {
+[s S295 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S295 . T0PS PSA T0SE T0CS T016BIT TMR0ON ]
+"6802
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6802:     struct {
+[s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S296 . T0PS0 T0PS1 T0PS2 T0PS3 ]
+"6793
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6793: typedef union {
+[u S294 `S295 1 `S296 1 ]
+[n S294 . . . ]
+"6809
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6809: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS294 ~T0 @X0 0 e@4053 ]
+"6864
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
+[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"7313
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7313:     struct {
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7323
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7323:     struct {
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7333
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7333:     struct {
+[s S310 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S310 . . GIEL GIEH ]
+"7312
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7312: typedef union {
+[u S307 `S308 1 `S309 1 `S310 1 ]
+[n S307 . . . . ]
+"7339
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7339: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS307 ~T0 @X0 0 e@4082 ]
+"6473
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6473:     struct {
+[s S277 :1 `uc 1 ]
+[n S277 . NOT_BOR ]
+"6476
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6476:     struct {
+[s S278 :1 `uc 1 :1 `uc 1 ]
+[n S278 . . NOT_POR ]
+"6480
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6480:     struct {
+[s S279 :2 `uc 1 :1 `uc 1 ]
+[n S279 . . NOT_PD ]
+"6484
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6484:     struct {
+[s S280 :3 `uc 1 :1 `uc 1 ]
+[n S280 . . NOT_TO ]
+"6488
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6488:     struct {
+[s S281 :4 `uc 1 :1 `uc 1 ]
+[n S281 . . NOT_RI ]
+"6492
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6492:     struct {
+[s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S282 . nBOR nPOR nPD nTO nRI . IPEN ]
+"6501
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6501:     struct {
+[s S283 :7 `uc 1 :1 `uc 1 ]
+[n S283 . . NOT_IPEN ]
+"6505
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6505:     struct {
+[s S284 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S284 . BOR POR PD TO RI . nIPEN ]
+"6472
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6472: typedef union {
+[u S276 `S277 1 `S278 1 `S279 1 `S280 1 `S281 1 `S282 1 `S283 1 `S284 1 ]
+[n S276 . . . . . . . . . ]
+"6515
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6515: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
+[v _RCONbits `VS276 ~T0 @X0 0 e@4048 ]
 "4583
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4583: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
 [v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
@@ -661,17 +737,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7616
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"29 user.c
-[; ;user.c: 29: void InitApp(void)
+"28 user.c
+[; ;user.c: 28: void InitApp(void)
 [v _InitApp `(v ~T0 @X0 1 ef ]
-"30
-[; ;user.c: 30: {
+"29
+[; ;user.c: 29: {
 {
 [e :U _InitApp ]
 [f ]
-"34
-[; ;user.c: 34:     TRISBbits.TRISB0 = 0;
+"33
+[; ;user.c: 33:     TRISBbits.TRISB0 = 0;
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
+"34
+[; ;user.c: 34:     TRISBbits.RB1 = 0;
+[e = . . _TRISBbits 1 1 -> -> 0 `i `uc ]
 "37
 [; ;user.c: 37:     init_usart();
 [e ( _init_usart ..  ]
@@ -725,30 +804,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 317 ]
 }
 "69
-[; ;user.c: 69: void putch(unsigned char byte) {
+[; ;user.c: 69: void init_timer(void)
+[v _init_timer `(v ~T0 @X0 1 ef ]
+"70
+[; ;user.c: 70: {
+{
+[e :U _init_timer ]
+[f ]
+"72
+[; ;user.c: 72:     T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"73
+[; ;user.c: 73:     T0CONbits.T016BIT = 1;
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+"74
+[; ;user.c: 74:     T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+"75
+[; ;user.c: 75:     T0CONbits.PSA = 0b111;
+[e = . . _T0CONbits 0 1 -> -> 7 `i `uc ]
+"76
+[; ;user.c: 76:     T0CONbits.T0PS = 0b111;
+[e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
+"78
+[; ;user.c: 78:     TMR0 = -12500;
+[e = _TMR0 -> -U -> 12500 `i `us ]
+"79
+[; ;user.c: 79:     INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"80
+[; ;user.c: 80:     INTCONbits.T0IE = 1;
+[e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
+"81
+[; ;user.c: 81:     RCONbits.IPEN = 0;
+[e = . . _RCONbits 5 6 -> -> 0 `i `uc ]
+"82
+[; ;user.c: 82:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"83
+[; ;user.c: 83:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"84
+[; ;user.c: 84:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"87
+[; ;user.c: 87: }
+[e :UE 318 ]
+}
+"89
+[; ;user.c: 89: void putch(unsigned char byte) {
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-"70
-[; ;user.c: 70:     TXSTA = 0x26;
+"90
+[; ;user.c: 90:     TXSTA = 0x26;
 [e = _TXSTA -> -> 38 `i `uc ]
-"71
-[; ;user.c: 71:     RCSTA1bits.SPEN = 1;
+"91
+[; ;user.c: 91:     RCSTA1bits.SPEN = 1;
 [e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-"72
-[; ;user.c: 72:     while (!TXIF)continue;
-[e $U 319  ]
-[e :U 320 ]
-[e $U 319  ]
-[e :U 319 ]
-[e $ ! _TXIF 320  ]
+"92
+[; ;user.c: 92:     while (!TXIF)continue;
+[e $U 320  ]
 [e :U 321 ]
-"73
-[; ;user.c: 73:     TXREG = byte;
+[e $U 320  ]
+[e :U 320 ]
+[e $ ! _TXIF 321  ]
+[e :U 322 ]
+"93
+[; ;user.c: 93:     TXREG = byte;
 [e = _TXREG _byte ]
-"74
-[; ;user.c: 74: }
-[e :UE 318 ]
+"94
+[; ;user.c: 94: }
+[e :UE 319 ]
 }
