@@ -23,7 +23,7 @@
     </conf>
     <conf name="C18_18F87K22" type="2">
       <platformToolSN>platform-tool-sn</platformToolSN>
-      <languageToolchainDir>/opt/microchip/mplabx/v5.15/mpasmx</languageToolchainDir>
+      <languageToolchainDir>/opt/microchip/xc8/v2.05/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>

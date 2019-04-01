@@ -18,6 +18,7 @@
 #endif
 
 #include "user.h"
+#include <stdio.h>
 
 /******************************************************************************/
 /* User Functions                                                             */
@@ -32,9 +33,19 @@ void InitApp(void)
     /* Setup analog functionality and port direction */
     TRISBbits.TRISB0 = 0; // enable port B bit 0 as output
     
-    // Setup UART
-    TRISCbits.TRISC6 = 0;   // TX as output
-    TRISCbits.TRISC7 = 1;   // RX as input
+    /* Initialize peripherals */
+    init_usart();
+
+    /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
+
+    /* Enable interrupts */
+}
+
+void init_usart(void)
+{
+      // Setup UART
+    TRISCbits.RC6 = 0;   // TX as output
+    TRISCbits.RC7 = 1;   // RX as input
     
     TXSTA1bits.SYNC = 0;    // Async operation
     TXSTA1bits.TX9 = 0;     // No tx of 9th bit
@@ -47,19 +58,19 @@ void InitApp(void)
     // Setting for 9600 BPS
     BAUDCONbits.BRG16 = 0;  // Divisor at 8 bit
     TXSTA1bits.BRGH = 0;    // No high-speed baudrate
-    SPBRG1 = 51;            // divisor for 9600
+    SPBRG1 = 129;            // divisor for 2400 baud with 20MHz FOSC
     
     // enable USART Interrupt
     // PIE1bits.TXIE = 1;
     // INTCONbits.GIE = 1;
-    // INTCONbits.PEIE = 1;
+    // INTCONbits.PEIE = 1;  
+}
 
-    /* Initialize peripherals */
-    
-
-    /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
-
-    /* Enable interrupts */
+void putch(unsigned char byte) {
+    TXSTA = 0x26;
+    RCSTA1bits.SPEN = 1;
+    while (!TXIF)continue;
+    TXREG = byte; /* transmit a character to Serial IO */
 }
 
 

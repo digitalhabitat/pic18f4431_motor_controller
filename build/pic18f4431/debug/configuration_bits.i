@@ -5130,6 +5130,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 7 "configuration_bits.c" 2
 # 56 "configuration_bits.c"
 #pragma config OSC = HS
+
 #pragma config FCMEN = ON
 #pragma config IESO = ON
 
@@ -5189,5 +5190,5 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 125 "configuration_bits.c"
+# 126 "configuration_bits.c"
 

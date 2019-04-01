@@ -14,7 +14,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2527
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2527: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
 [v _TRISBbits `VS91 ~T0 @X0 0 e@3987 ]
-"2728
+"14 ./user.h
+[; ;./user.h: 14: void init_usart(void);
+[v _init_usart `(v ~T0 @X0 0 ef ]
+"2728 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2728:     struct {
 [s S98 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S98 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
@@ -109,6 +112,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4868
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4868: extern volatile unsigned char SPBRG1 __attribute__((address(0xFAF)));
 [v _SPBRG1 `Vuc ~T0 @X0 0 e@4015 ]
+"4583
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4583: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
+"9517
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 9517: extern volatile __bit TXIF __attribute__((address(0x7CF4)));
+[v _TXIF `Vb ~T0 @X0 0 e@31988 ]
+"4839
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4839: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
 [; <" DFLTCON equ 0F60h ;# ">
@@ -649,51 +661,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7616
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"28 user.c
-[; ;user.c: 28: void InitApp(void)
+"29 user.c
+[; ;user.c: 29: void InitApp(void)
 [v _InitApp `(v ~T0 @X0 1 ef ]
-"29
-[; ;user.c: 29: {
+"30
+[; ;user.c: 30: {
 {
 [e :U _InitApp ]
 [f ]
-"33
-[; ;user.c: 33:     TRISBbits.TRISB0 = 0;
+"34
+[; ;user.c: 34:     TRISBbits.TRISB0 = 0;
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
-"36
-[; ;user.c: 36:     TRISCbits.TRISC6 = 0;
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "37
-[; ;user.c: 37:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"39
-[; ;user.c: 39:     TXSTA1bits.SYNC = 0;
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-"40
-[; ;user.c: 40:     TXSTA1bits.TX9 = 0;
-[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
-"41
-[; ;user.c: 41:     TXSTA1bits.TXEN = 1;
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-"43
-[; ;user.c: 43:     RCSTA1bits.RX9 = 0;
-[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
+[; ;user.c: 37:     init_usart();
+[e ( _init_usart ..  ]
+"42
+[; ;user.c: 42: }
+[e :UE 316 ]
+}
 "44
-[; ;user.c: 44:     RCSTA1bits.CREN = 1;
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 44: void init_usart(void)
+[v _init_usart `(v ~T0 @X0 1 ef ]
 "45
-[; ;user.c: 45:     RCSTA1bits.SPEN = 1;
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;user.c: 45: {
+{
+[e :U _init_usart ]
+[f ]
+"47
+[; ;user.c: 47:     TRISCbits.RC6 = 0;
+[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
 "48
-[; ;user.c: 48:     BAUDCONbits.BRG16 = 0;
-[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
-"49
-[; ;user.c: 49:     TXSTA1bits.BRGH = 0;
-[e = . . _TXSTA1bits 0 2 -> -> 0 `i `uc ]
+[; ;user.c: 48:     TRISCbits.RC7 = 1;
+[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
 "50
-[; ;user.c: 50:     SPBRG1 = 51;
-[e = _SPBRG1 -> -> 51 `i `uc ]
-"63
-[; ;user.c: 63: }
-[e :UE 314 ]
+[; ;user.c: 50:     TXSTA1bits.SYNC = 0;
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
+"51
+[; ;user.c: 51:     TXSTA1bits.TX9 = 0;
+[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
+"52
+[; ;user.c: 52:     TXSTA1bits.TXEN = 1;
+[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+"54
+[; ;user.c: 54:     RCSTA1bits.RX9 = 0;
+[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
+"55
+[; ;user.c: 55:     RCSTA1bits.CREN = 1;
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+"56
+[; ;user.c: 56:     RCSTA1bits.SPEN = 1;
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+"59
+[; ;user.c: 59:     BAUDCONbits.BRG16 = 0;
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
+"60
+[; ;user.c: 60:     TXSTA1bits.BRGH = 0;
+[e = . . _TXSTA1bits 0 2 -> -> 0 `i `uc ]
+"61
+[; ;user.c: 61:     SPBRG1 = 129;
+[e = _SPBRG1 -> -> 129 `i `uc ]
+"67
+[; ;user.c: 67: }
+[e :UE 317 ]
+}
+"69
+[; ;user.c: 69: void putch(unsigned char byte) {
+[v _putch `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _putch ]
+[v _byte `uc ~T0 @X0 1 r1 ]
+[f ]
+"70
+[; ;user.c: 70:     TXSTA = 0x26;
+[e = _TXSTA -> -> 38 `i `uc ]
+"71
+[; ;user.c: 71:     RCSTA1bits.SPEN = 1;
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+"72
+[; ;user.c: 72:     while (!TXIF)continue;
+[e $U 319  ]
+[e :U 320 ]
+[e $U 319  ]
+[e :U 319 ]
+[e $ ! _TXIF 320  ]
+[e :U 321 ]
+"73
+[; ;user.c: 73:     TXREG = byte;
+[e = _TXREG _byte ]
+"74
+[; ;user.c: 74: }
+[e :UE 318 ]
 }

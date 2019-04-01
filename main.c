@@ -19,6 +19,7 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
+#include <stdio.h>
 
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
@@ -41,9 +42,14 @@ void main(void)
 
     /* TODO <INSERT USER APPLICATION CODE HERE> */
     
-
+    char x;
+    int val;
+    val = 96;
+    
     while(1)
     {
+
+        printf("hello world!/r/n");
         PORTBbits.RB0 = 1;
         __delaywdt_ms(100);
         __delaywdt_ms(100);
