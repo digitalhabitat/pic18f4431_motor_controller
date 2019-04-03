@@ -5376,6 +5376,7 @@ char *tempnam(const char *, const char *);
 
 void InitApp(void);
 void init_usart(void);
+void init_timer(void);
 # 21 "user.c" 2
 
 
@@ -5394,6 +5395,7 @@ void InitApp(void)
 
 
     init_usart();
+    init_timer();
 
 
 
@@ -5429,12 +5431,11 @@ void init_timer(void)
 {
 
     T0CONbits.TMR0ON = 0;
-    T0CONbits.T016BIT = 1;
+    T0CONbits.T016BIT = 0;
     T0CONbits.T0CS = 0;
-    T0CONbits.PSA = 1;
-    T0CONbits.T0PS = 0;
-
-    TMR0 = -12500;
+    T0CONbits.PSA = 0;
+    T0CONbits.T0PS = 0b111;
+    TMR0 = 0;
     INTCONbits.T0IF = 0;
     INTCONbits.T0IE = 1;
     RCONbits.IPEN = 0;

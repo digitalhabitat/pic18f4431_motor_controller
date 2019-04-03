@@ -5380,6 +5380,7 @@ char *tempnam(const char *, const char *);
 
 void InitApp(void);
 void init_usart(void);
+void init_timer(void);
 # 22 "main.c" 2
 # 34 "main.c"
 void main(void)
@@ -5399,20 +5400,8 @@ void main(void)
     while(1)
     {
 
-
-        PORTBbits.RB0 = 1;
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        PORTBbits.RB0 = 0;
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-       T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
+        printf("timer: %x\r\n", TMR0);
+# 66 "main.c"
     }
 
 }

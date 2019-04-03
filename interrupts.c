@@ -1,6 +1,7 @@
 /******************************************************************************/
 /*Files to Include                                                            */
 /******************************************************************************/
+int timer0_var=0;
 
 #if defined(__XC)
     #include <xc.h>         /* XC8 General Include File */
@@ -59,17 +60,33 @@ void high_isr(void)
            Unhandled interrupts
       }*/
 
-      if(INTCONbits.T0IF == 1)
-      {
-        TMR0 = -12500; // reload timer value
+    if(INTCONbits.T0IF == 1)
+    {
+        timer0_var++;
+        printf("timer!\r\n");
+        TMR0 = 0; // reload timer value
+        
         
         // invert the LED
-        //LATBbits.LATB0 = !LATBbits.LATB0;
-        TRISBbits.RB1 = !TRISBbits.RB1;
+        if (timer0_var == 0)
+        {
+            //PORTB = 0;
+            //PORTBbits.RB0 = 1;
+        } 
+        else if(timer0_var == 1)
+        {
+            //PORTB = 0;
+            //PORTBbits.RB1 = 1;
+        } 
+        else if(timer0_var == 2)
+        {
+            timer0_var = 0;
+            PORTBbits.RB0 = ~PORTBbits.RB0;
+        }
         
+        // Reset Interrupt Flag
+    
         INTCONbits.T0IF = 0;
-        printf("hello world!/r/n");
-        
       }
 #endif
 

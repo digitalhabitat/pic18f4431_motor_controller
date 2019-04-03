@@ -48,8 +48,8 @@ void main(void)
     while(1)
     {
 
-        
-        PORTBbits.RB0 = 1;
+        printf("timer: %x\r\n", TMR0);
+       /* PORTBbits.RB0 = 1;
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
@@ -62,6 +62,7 @@ void main(void)
         __delaywdt_ms(100);
         __delaywdt_ms(100);
        T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
+        */
     }
 
 }

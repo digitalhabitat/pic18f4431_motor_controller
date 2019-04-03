@@ -35,6 +35,7 @@ void InitApp(void)
     
     /* Initialize peripherals */
     init_usart();
+    init_timer();
 
     /* Configure the IPEN bit (1=on) in RCON to turn on/off int priorities */
 
@@ -58,7 +59,7 @@ void init_usart(void)
     // Setting for 9600 BPS
     BAUDCONbits.BRG16 = 0;  // Divisor at 8 bit
     TXSTA1bits.BRGH = 0;    // No high-speed baudrate
-    SPBRG1 = 129;            // divisor for 2400 baud with 20MHz FOSC
+    SPBRG1 = 129;           // divisor for 9600 baud with 20MHz FOSC (TABLE 20-3:)
     
     // enable USART Interrupt
     // PIE1bits.TXIE = 1;
@@ -70,12 +71,11 @@ void init_timer(void)
 {
     
     T0CONbits.TMR0ON = 0; // stop the timer
-    T0CONbits.T016BIT = 1; // timer configured as 16-bit
+    T0CONbits.T016BIT = 0; // timer configured as 16-bit
     T0CONbits.T0CS = 0; // use internal clock
-    T0CONbits.PSA = 1; // don't use prescaler
-    T0CONbits.T0PS = 0;
-    // prescaler 1:256 (?0b? is a prefix for binary)
-    TMR0 = -12500; // setup initial timer value
+    T0CONbits.PSA = 0; // use prescaler
+    T0CONbits.T0PS = 0b111; // 1:256 prescale value
+    TMR0 = 0; // setup initial timer value 
     INTCONbits.T0IF = 0; // reset timer interrupt flag
     INTCONbits.T0IE = 1; // enable timer interrupts
     RCONbits.IPEN = 0; // do not use priorities

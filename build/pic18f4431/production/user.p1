@@ -17,6 +17,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./user.h
 [; ;./user.h: 15: void init_usart(void);
 [v _init_usart `(v ~T0 @X0 0 ef ]
+"16
+[; ;./user.h: 16: void init_timer(void);
+[v _init_timer `(v ~T0 @X0 0 ef ]
 "2728 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2728:     struct {
 [s S98 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -754,81 +757,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;user.c: 37:     init_usart();
 [e ( _init_usart ..  ]
-"42
-[; ;user.c: 42: }
+"38
+[; ;user.c: 38:     init_timer();
+[e ( _init_timer ..  ]
+"43
+[; ;user.c: 43: }
 [e :UE 316 ]
 }
-"44
-[; ;user.c: 44: void init_usart(void)
-[v _init_usart `(v ~T0 @X0 1 ef ]
 "45
-[; ;user.c: 45: {
+[; ;user.c: 45: void init_usart(void)
+[v _init_usart `(v ~T0 @X0 1 ef ]
+"46
+[; ;user.c: 46: {
 {
 [e :U _init_usart ]
 [f ]
-"47
-[; ;user.c: 47:     TRISCbits.RC6 = 0;
-[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
 "48
-[; ;user.c: 48:     TRISCbits.RC7 = 1;
+[; ;user.c: 48:     TRISCbits.RC6 = 0;
+[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
+"49
+[; ;user.c: 49:     TRISCbits.RC7 = 1;
 [e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-"50
-[; ;user.c: 50:     TXSTA1bits.SYNC = 0;
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
 "51
-[; ;user.c: 51:     TXSTA1bits.TX9 = 0;
-[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
+[; ;user.c: 51:     TXSTA1bits.SYNC = 0;
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
 "52
-[; ;user.c: 52:     TXSTA1bits.TXEN = 1;
+[; ;user.c: 52:     TXSTA1bits.TX9 = 0;
+[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
+"53
+[; ;user.c: 53:     TXSTA1bits.TXEN = 1;
 [e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-"54
-[; ;user.c: 54:     RCSTA1bits.RX9 = 0;
-[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
 "55
-[; ;user.c: 55:     RCSTA1bits.CREN = 1;
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 55:     RCSTA1bits.RX9 = 0;
+[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
 "56
-[; ;user.c: 56:     RCSTA1bits.SPEN = 1;
+[; ;user.c: 56:     RCSTA1bits.CREN = 1;
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+"57
+[; ;user.c: 57:     RCSTA1bits.SPEN = 1;
 [e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-"59
-[; ;user.c: 59:     BAUDCONbits.BRG16 = 0;
-[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
 "60
-[; ;user.c: 60:     TXSTA1bits.BRGH = 0;
-[e = . . _TXSTA1bits 0 2 -> -> 0 `i `uc ]
+[; ;user.c: 60:     BAUDCONbits.BRG16 = 0;
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
 "61
-[; ;user.c: 61:     SPBRG1 = 129;
+[; ;user.c: 61:     TXSTA1bits.BRGH = 0;
+[e = . . _TXSTA1bits 0 2 -> -> 0 `i `uc ]
+"62
+[; ;user.c: 62:     SPBRG1 = 129;
 [e = _SPBRG1 -> -> 129 `i `uc ]
-"67
-[; ;user.c: 67: }
+"68
+[; ;user.c: 68: }
 [e :UE 317 ]
 }
-"69
-[; ;user.c: 69: void init_timer(void)
-[v _init_timer `(v ~T0 @X0 1 ef ]
 "70
-[; ;user.c: 70: {
+[; ;user.c: 70: void init_timer(void)
+[v _init_timer `(v ~T0 @X0 1 ef ]
+"71
+[; ;user.c: 71: {
 {
 [e :U _init_timer ]
 [f ]
-"72
-[; ;user.c: 72:     T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "73
-[; ;user.c: 73:     T0CONbits.T016BIT = 1;
-[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 73:     T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "74
-[; ;user.c: 74:     T0CONbits.T0CS = 0;
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 74:     T0CONbits.T016BIT = 0;
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
 "75
-[; ;user.c: 75:     T0CONbits.PSA = 1;
-[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+[; ;user.c: 75:     T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
 "76
-[; ;user.c: 76:     T0CONbits.T0PS = 0;
-[e = . . _T0CONbits 0 0 -> -> 0 `i `uc ]
+[; ;user.c: 76:     T0CONbits.PSA = 0;
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+"77
+[; ;user.c: 77:     T0CONbits.T0PS = 0b111;
+[e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
 "78
-[; ;user.c: 78:     TMR0 = -12500;
-[e = _TMR0 -> -U -> 12500 `i `us ]
+[; ;user.c: 78:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
 "79
 [; ;user.c: 79:     INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]

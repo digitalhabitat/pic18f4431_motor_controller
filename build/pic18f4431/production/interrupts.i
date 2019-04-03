@@ -10,6 +10,8 @@
 
 
 
+int timer0_var=0;
+
 
 
 # 1 "/opt/microchip/xc8/v2.05/pic/include/xc.h" 1 3
@@ -5127,7 +5129,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "/opt/microchip/xc8/v2.05/pic/include/xc.h" 2 3
-# 7 "interrupts.c" 2
+# 8 "interrupts.c" 2
 
 
 
@@ -5218,9 +5220,9 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 156 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 2 3
-# 16 "interrupts.c" 2
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
 # 17 "interrupts.c" 2
+# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
+# 18 "interrupts.c" 2
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
@@ -5357,23 +5359,39 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 18 "interrupts.c" 2
-# 27 "interrupts.c"
+# 19 "interrupts.c" 2
+# 28 "interrupts.c"
 void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
-# 36 "interrupts.c"
+# 37 "interrupts.c"
 {
-# 62 "interrupts.c"
-      if(INTCONbits.T0IF == 1)
-      {
-        TMR0 = -12500;
+# 63 "interrupts.c"
+    if(INTCONbits.T0IF == 1)
+    {
+        timer0_var++;
+        printf("timer!\r\n");
+        TMR0 = 0;
 
 
 
-        TRISBbits.RB1 = !TRISBbits.RB1;
+        if (timer0_var == 0)
+        {
+
+
+        }
+        else if(timer0_var == 1)
+        {
+
+
+        }
+        else if(timer0_var == 2)
+        {
+            timer0_var = 0;
+            PORTBbits.RB0 = ~PORTBbits.RB0;
+        }
+
+
 
         INTCONbits.T0IF = 0;
-        printf("hello world!/r/n");
-
       }
 
 
@@ -5390,5 +5408,5 @@ void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 
 
 {
-# 115 "interrupts.c"
+# 132 "interrupts.c"
 }
