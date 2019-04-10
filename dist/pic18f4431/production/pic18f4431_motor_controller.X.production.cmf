@@ -53,7 +53,7 @@ bssBANK0 BANK0 1 D6 D6 A 1
 bssBANK1 BANK1 1 100 100 20 1
 intcode CODE 0 8 8 6 1
 smallconst SMALLCONST 0 300 300 18 1
-$/tmp/xcX3enV9x.o
+$/tmp/xcXhWXIAS.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 26 26 4 1
 reset_vec CODE 0 0 0 4 1
@@ -374,30 +374,30 @@ DC2 text2 CODE >1382:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
 114E text0 CODE >37:/home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
 1152 text0 CODE >40:/home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
 1156 text0 CODE >51:/home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
-10B0 cinit CODE >2091:/tmp/xcXW7ztJY
-10B0 cinit CODE >2093:/tmp/xcXW7ztJY
-10B0 cinit CODE >2096:/tmp/xcXW7ztJY
-10B0 cinit CODE >2121:/tmp/xcXW7ztJY
-10B4 cinit CODE >2122:/tmp/xcXW7ztJY
-10B6 cinit CODE >2123:/tmp/xcXW7ztJY
-10B6 cinit CODE >2124:/tmp/xcXW7ztJY
-10B8 cinit CODE >2125:/tmp/xcXW7ztJY
-10BA cinit CODE >2126:/tmp/xcXW7ztJY
-10BC cinit CODE >2129:/tmp/xcXW7ztJY
-10C0 cinit CODE >2130:/tmp/xcXW7ztJY
-10C2 cinit CODE >2131:/tmp/xcXW7ztJY
-10C2 cinit CODE >2132:/tmp/xcXW7ztJY
-10C4 cinit CODE >2133:/tmp/xcXW7ztJY
-10C6 cinit CODE >2134:/tmp/xcXW7ztJY
-10C8 cinit CODE >2140:/tmp/xcXW7ztJY
-10C8 cinit CODE >2142:/tmp/xcXW7ztJY
-10CA cinit CODE >2143:/tmp/xcXW7ztJY
-10CC cinit CODE >2145:/tmp/xcXW7ztJY
-10CE cinit CODE >2146:/tmp/xcXW7ztJY
-10D0 cinit CODE >2147:/tmp/xcXW7ztJY
-10D2 cinit CODE >2148:/tmp/xcXW7ztJY
-10D4 cinit CODE >2149:/tmp/xcXW7ztJY
-10D6 cinit CODE >2150:/tmp/xcXW7ztJY
+10B0 cinit CODE >2091:/tmp/xcXjfYS7i
+10B0 cinit CODE >2093:/tmp/xcXjfYS7i
+10B0 cinit CODE >2096:/tmp/xcXjfYS7i
+10B0 cinit CODE >2121:/tmp/xcXjfYS7i
+10B4 cinit CODE >2122:/tmp/xcXjfYS7i
+10B6 cinit CODE >2123:/tmp/xcXjfYS7i
+10B6 cinit CODE >2124:/tmp/xcXjfYS7i
+10B8 cinit CODE >2125:/tmp/xcXjfYS7i
+10BA cinit CODE >2126:/tmp/xcXjfYS7i
+10BC cinit CODE >2129:/tmp/xcXjfYS7i
+10C0 cinit CODE >2130:/tmp/xcXjfYS7i
+10C2 cinit CODE >2131:/tmp/xcXjfYS7i
+10C2 cinit CODE >2132:/tmp/xcXjfYS7i
+10C4 cinit CODE >2133:/tmp/xcXjfYS7i
+10C6 cinit CODE >2134:/tmp/xcXjfYS7i
+10C8 cinit CODE >2140:/tmp/xcXjfYS7i
+10C8 cinit CODE >2142:/tmp/xcXjfYS7i
+10CA cinit CODE >2143:/tmp/xcXjfYS7i
+10CC cinit CODE >2145:/tmp/xcXjfYS7i
+10CE cinit CODE >2146:/tmp/xcXjfYS7i
+10D0 cinit CODE >2147:/tmp/xcXjfYS7i
+10D2 cinit CODE >2148:/tmp/xcXjfYS7i
+10D4 cinit CODE >2149:/tmp/xcXjfYS7i
+10D6 cinit CODE >2150:/tmp/xcXjfYS7i
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -417,7 +417,7 @@ __Hspace_0 30000E 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controll
 __Hspace_1 120 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcX3enV9x.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXhWXIAS.o
 _timer0_var DE 0 BANK0 1 bssBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 isalpha@c 70 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -428,7 +428,7 @@ i2xtoa@fp 1D 0 COMRAM 1 cstackCOMRAM dist/pic18f4431/production/pic18f4431_motor
 __Lsmallconst 300 0 SMALLCONST 0 smallconst dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _TMR0 FD6 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _TXIF 7CF4 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcX3enV9x.o
+___sp 0 0 STACK 2 stack /tmp/xcXhWXIAS.o
 _dbuf 100 0 BANK1 1 bssBANK1 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _main 114E 0 CODE 0 text0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _nout D6 0 BANK0 1 bssBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -438,7 +438,7 @@ btemp 5F 0 COMRAM 1 temp dist/pic18f4431/production/pic18f4431_motor_controller.
 pad@i 88 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 pad@p 85 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 pad@w 8A 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-start 26 0 CODE 0 init /tmp/xcX3enV9x.o
+start 26 0 CODE 0 init /tmp/xcXhWXIAS.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __size_of_main 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __size_of_xtoa 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -460,11 +460,11 @@ ttemp6 63 0 COMRAM 1 temp dist/pic18f4431/production/pic18f4431_motor_controller
 ttemp7 67 0 COMRAM 1 temp dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __size_of_low_isr 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcX3enV9x.o
-intlevel0 0 0 CODE 0 text /tmp/xcX3enV9x.o
-intlevel1 0 0 CODE 0 text /tmp/xcX3enV9x.o
-intlevel2 0 0 CODE 0 text /tmp/xcX3enV9x.o
-intlevel3 0 0 CODE 0 text /tmp/xcX3enV9x.o
+__accesstop 60 0 ABS 0 - /tmp/xcXhWXIAS.o
+intlevel0 0 0 CODE 0 text /tmp/xcXhWXIAS.o
+intlevel1 0 0 CODE 0 text /tmp/xcXhWXIAS.o
+intlevel2 0 0 CODE 0 text /tmp/xcXhWXIAS.o
+intlevel3 0 0 CODE 0 text /tmp/xcXhWXIAS.o
 _InitApp 11AE 0 CODE 0 text14 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 wtemp8 60 0 COMRAM 1 temp dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -491,8 +491,8 @@ i2printf@ret 62 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_moto
 xtoa@fp 8C 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 i2printf@ap 64 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 i2_toupper$1184 D 0 COMRAM 1 cstackCOMRAM dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcX3enV9x.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcX3enV9x.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXhWXIAS.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXhWXIAS.o
 ?_toupper 76 0 BANK0 1 cstackBANK0 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 i2_toupper E66 0 CODE 0 text24 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -570,7 +570,7 @@ __Htext9 0 0 ABS 0 text9 dist/pic18f4431/production/pic18f4431_motor_controller.
 __CFG_PWM4MX$RB5 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-__smallconst 300 0 SMALLCONST 0 smallconst /tmp/xcX3enV9x.o
+__smallconst 300 0 SMALLCONST 0 smallconst /tmp/xcXhWXIAS.o
 __Hcomram 0 0 ABS 0 comram dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 i2_vfpfcnvrt 91E 0 CODE 0 text22 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -731,8 +731,8 @@ _strlen 1082 0 CODE 0 text8 dist/pic18f4431/production/pic18f4431_motor_controll
 __Lfardata 0 0 FARRAM 0 fardata dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _low_isr 18 0 CODE 0 intcodelo dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-stackhi 2FF 0 ABS 0 - /tmp/xcX3enV9x.o
-stacklo 120 0 ABS 0 - /tmp/xcX3enV9x.o
+stackhi 2FF 0 ABS 0 - /tmp/xcXhWXIAS.o
+stacklo 120 0 ABS 0 - /tmp/xcXhWXIAS.o
 ?i2_xtoa 1D 0 COMRAM 1 cstackCOMRAM dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Lintret 0 0 ABS 0 intret dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
@@ -816,7 +816,7 @@ __Ltext29 0 0 ABS 0 text29 dist/pic18f4431/production/pic18f4431_motor_controlle
 __Ltext30 0 0 ABS 0 text30 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Ltext31 0 0 ABS 0 text31 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Ltext32 0 0 ABS 0 text32 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
-__ramtop 300 0 RAM 0 ramtop /tmp/xcX3enV9x.o
+__ramtop 300 0 RAM 0 ramtop /tmp/xcXhWXIAS.o
 __CFG_PWMPIN$OFF 0 0 ABS 0 - dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 _vfprintf D6E 0 CODE 0 text2 dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o
 __Lpowerup 26 0 CODE 0 powerup dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o

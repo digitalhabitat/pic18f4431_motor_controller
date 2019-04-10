@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.05/pic/dat/en_msgs.txt -cs \
   -h+dist/pic18f4431/production/pic18f4431_motor_controller.X.production.sym \
   --cmf=dist/pic18f4431/production/pic18f4431_motor_controller.X.production.cmf \
-  -z -Q18F4431 -o/tmp/xcXxzfFJe --defsym=__MPLAB_BUILD=1 \
+  -z -Q18F4431 -o/tmp/xcXOkN10y --defsym=__MPLAB_BUILD=1 \
   -Mdist/pic18f4431/production/pic18f4431_motor_controller.X.production.map \
   -E1 -ver=XC8 --acfsm=1493 -ASTACK=0120h-02FFh -pstack=STACK \
   -ACODE=00h-03FFFh -ACONST=00h-03FFFh -ASMALLCONST=0300h-03FFhx61 \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcX3enV9x.o \
+  /tmp/xcXhWXIAS.o \
   dist/pic18f4431/production/pic18f4431_motor_controller.X.production.o 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcX3enV9x.o
+/tmp/xcXhWXIAS.o
                 init                                 26       26        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
