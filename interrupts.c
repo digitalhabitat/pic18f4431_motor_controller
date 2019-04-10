@@ -1,6 +1,7 @@
 /******************************************************************************/
 /*Files to Include                                                            */
 /******************************************************************************/
+int timer0_var=0;
 
 #if defined(__XC)
     #include <xc.h>         /* XC8 General Include File */
@@ -14,7 +15,7 @@
 
 #include <stdint.h>         /* For uint8_t definition */
 #include <stdbool.h>        /* For true/false definition */
-
+#include <stdio.h>
 #endif
 
 /******************************************************************************/
@@ -40,24 +41,53 @@ void high_isr(void)
       Do not use a seperate if block for each interrupt flag to avoid run
       time errors. */
 
-#if 0
+#if 1
     
       /* TODO Add High Priority interrupt routine code here. */
 
       /* Determine which flag generated the interrupt */
-      if(<Interrupt Flag 1>)
+      
+      /*if(<Interrupt Flag 1>)
       {
-          <Interrupt Flag 1=0>; /* Clear Interrupt Flag 1 */
+          <Interrupt Flag 1=0>; Clear Interrupt Flag 1
       }
       else if (<Interrupt Flag 2>)
       {
-          <Interrupt Flag 2=0>; /* Clear Interrupt Flag 2 */
+          <Interrupt Flag 2=0>; Clear Interrupt Flag 2 
       }
       else
       {
-          /* Unhandled interrupts */
-      }
+           Unhandled interrupts
+      }*/
 
+    if(INTCONbits.T0IF == 1)
+    {
+        timer0_var++;
+        printf("timer!\r\n");
+        TMR0 = 0; // reload timer value
+        
+        
+        // invert the LED
+        if (timer0_var == 0)
+        {
+            //PORTB = 0;
+            //PORTBbits.RB0 = 1;
+        } 
+        else if(timer0_var == 1)
+        {
+            //PORTB = 0;
+            //PORTBbits.RB1 = 1;
+        } 
+        else if(timer0_var == 2)
+        {
+            timer0_var = 0;
+            PORTBbits.RB0 = ~PORTBbits.RB0;
+        }
+        
+        // Reset Interrupt Flag
+    
+        INTCONbits.T0IF = 0;
+      }
 #endif
 
 }

@@ -1,7 +1,52 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T36 __interrupt high_priority ]
+"7313 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7313:     struct {
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7323
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7323:     struct {
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7333
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7333:     struct {
+[s S310 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S310 . . GIEL GIEH ]
+"7312
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7312: typedef union {
+[u S307 `S308 1 `S309 1 `S310 1 ]
+[n S307 . . . . ]
+"7339
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7339: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS307 ~T0 @X0 0 e@4082 ]
+"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"6864 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
+[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"1203
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"1213
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1213:     struct {
+[s S48 :3 `uc 1 :1 `uc 1 ]
+[n S48 . . CCP2_PA2 ]
+"1202
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1202: typedef union {
+[u S46 `S47 1 `S48 1 ]
+[n S46 . . . ]
+"1218
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1218: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS46 ~T0 @X0 0 e@3969 ]
 [t T37 __interrupt low_priority ]
+"4 interrupts.c
+[; ;interrupts.c: 4: int timer0_var=0;
+[v _timer0_var `i ~T0 @X0 1 e ]
+[i _timer0_var
+-> 0 `i
+]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
 [; <" DFLTCON equ 0F60h ;# ">
@@ -543,28 +588,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-"27 interrupts.c
-[; ;interrupts.c: 27: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
+"28 interrupts.c
+[; ;interrupts.c: 28: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
 [v _high_isr `(v ~T36 @X0 1 ef ]
-"36
-[; ;interrupts.c: 36: {
+"37
+[; ;interrupts.c: 37: {
 {
 [e :U _high_isr ]
 [f ]
 "63
-[; ;interrupts.c: 63: }
-[e :UE 314 ]
+[; ;interrupts.c: 63:     if(INTCONbits.T0IF == 1)
+[e $ ! == -> . . _INTCONbits 1 2 `i -> 1 `i 317  ]
+"64
+[; ;interrupts.c: 64:     {
+{
+"65
+[; ;interrupts.c: 65:         timer0_var++;
+[e ++ _timer0_var -> 1 `i ]
+"66
+[; ;interrupts.c: 66:         printf("timer!\r\n");
+[e ( _printf :s 1C ]
+"67
+[; ;interrupts.c: 67:         TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
+"71
+[; ;interrupts.c: 71:         if (timer0_var == 0)
+[e $ ! == _timer0_var -> 0 `i 318  ]
+"72
+[; ;interrupts.c: 72:         {
+{
+"75
+[; ;interrupts.c: 75:         }
+}
+[e $U 319  ]
+"76
+[; ;interrupts.c: 76:         else if(timer0_var == 1)
+[e :U 318 ]
+[e $ ! == _timer0_var -> 1 `i 320  ]
+"77
+[; ;interrupts.c: 77:         {
+{
+"80
+[; ;interrupts.c: 80:         }
+}
+[e $U 321  ]
+"81
+[; ;interrupts.c: 81:         else if(timer0_var == 2)
+[e :U 320 ]
+[e $ ! == _timer0_var -> 2 `i 322  ]
+"82
+[; ;interrupts.c: 82:         {
+{
+"83
+[; ;interrupts.c: 83:             timer0_var = 0;
+[e = _timer0_var -> 0 `i ]
+"84
+[; ;interrupts.c: 84:             PORTBbits.RB0 = ~PORTBbits.RB0;
+[e = . . _PORTBbits 0 0 -> ~ -> . . _PORTBbits 0 0 `i `uc ]
+"85
+[; ;interrupts.c: 85:         }
+}
+[e :U 322 ]
+[e :U 321 ]
+[e :U 319 ]
+"89
+[; ;interrupts.c: 89:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"90
+[; ;interrupts.c: 90:       }
+}
+[e :U 317 ]
+"93
+[; ;interrupts.c: 93: }
+[e :UE 316 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
-"67
-[; ;interrupts.c: 67: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
+"97
+[; ;interrupts.c: 97: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 [v _low_isr `(v ~T37 @X0 1 ef ]
-"75
-[; ;interrupts.c: 75: {
+"105
+[; ;interrupts.c: 105: {
 {
 [e :U _low_isr ]
 [f ]
-"102
-[; ;interrupts.c: 102: }
-[e :UE 315 ]
+"132
+[; ;interrupts.c: 132: }
+[e :UE 323 ]
 }
+[p f _printf 8388608 ]
+[a 1C 116 105 109 101 114 33 13 10 0 ]

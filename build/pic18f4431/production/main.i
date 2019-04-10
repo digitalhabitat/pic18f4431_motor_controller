@@ -5229,10 +5229,11 @@ typedef uint32_t uint_fast32_t;
 void ConfigureOscillator(void);
 # 21 "main.c" 2
 # 1 "./user.h" 1
-# 13 "./user.h"
-void InitApp(void);
-void init_usart(void);
-# 22 "main.c" 2
+
+
+
+
+
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
@@ -5369,8 +5370,19 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 23 "main.c" 2
-# 35 "main.c"
+# 7 "./user.h" 2
+
+
+
+
+
+
+
+void InitApp(void);
+void init_usart(void);
+void init_timer(void);
+# 22 "main.c" 2
+# 34 "main.c"
 void main(void)
 {
 
@@ -5388,21 +5400,8 @@ void main(void)
     while(1)
     {
 
-        printf("hello world!/r/n");
-        PORTBbits.RB0 = 1;
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-
-        PORTBbits.RB0 = 0;
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-
+        printf("timer: %x\r\n", TMR0);
+# 66 "main.c"
     }
 
 }
