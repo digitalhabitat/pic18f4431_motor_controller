@@ -5378,11 +5378,19 @@ char *tempnam(const char *, const char *);
 
 
 
+
 void InitApp(void);
 void init_usart(void);
 void init_timer(void);
+void init_pwm(void);
+void enablePWM(char);
+void configPWMFreq(unsigned long freq);
+void setPDC0(long dutyCyclePercent);
 # 22 "main.c" 2
-# 34 "main.c"
+# 33 "main.c"
+void test(void);
+
+
 void main(void)
 {
 
@@ -5391,6 +5399,7 @@ void main(void)
 
     InitApp();
 
+    test();
 
 
     char x;
@@ -5401,7 +5410,28 @@ void main(void)
     {
 
         printf("timer: %x\r\n", TMR0);
-# 66 "main.c"
+# 69 "main.c"
     }
 
+}
+
+void test(void){
+    PORTA=0;
+    PORTB=0;
+    PORTD=0;
+    PORTE=0;
+    TRISB=0b00000000;
+    TRISD=0b00000000;
+    LATA=0b00110111;
+    LATB=0b00000000;
+    LATD=0b00000000;
+    LATE=0b00000011;
+    PTCON0=0b00001100;
+    PTCON1=0b10000000;
+    PWMCON0=0b00110111;
+    PWMCON1=0b00000000;
+    PTPERH=0x01;
+    PTPERL=0x38;
+    PDC0L=0b00110100;
+    PDC0H=0b00000011;
 }

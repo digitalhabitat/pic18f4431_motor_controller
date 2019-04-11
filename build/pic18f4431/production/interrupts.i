@@ -5386,7 +5386,7 @@ void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
         else if(timer0_var == 2)
         {
             timer0_var = 0;
-            PORTBbits.RB0 = ~PORTBbits.RB0;
+            PORTDbits.RD7 = ~PORTDbits.RD7;
         }
 
 

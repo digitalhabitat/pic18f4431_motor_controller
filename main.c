@@ -19,7 +19,7 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
-
+//#include "user.c"
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
@@ -30,6 +30,8 @@
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
+void test(void);
+
 
 void main(void)
 {
@@ -38,7 +40,8 @@ void main(void)
 
     /* Initialize I/O and Peripherals for application */
     InitApp();
-
+    //init_pwm();
+    test();
     /* TODO <INSERT USER APPLICATION CODE HERE> */
     
     char x;
@@ -49,7 +52,7 @@ void main(void)
     {
 
         printf("timer: %x\r\n", TMR0);
-       /* PORTBbits.RB0 = 1;
+       /* PORTBbits.RB0 = 1;s
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
@@ -67,3 +70,23 @@ void main(void)
 
 }
 
+void test(void){
+    PORTA=0;        
+    PORTB=0;   
+    PORTD=0;       
+    PORTE=0;    
+    TRISB=0b00000000;     
+    TRISD=0b00000000;   
+    LATA=0b00110111; 
+    LATB=0b00000000; 
+    LATD=0b00000000; 
+    LATE=0b00000011; 
+    PTCON0=0b00001100; //1:1 postcalw,  1:64 prescale  ,free-running mode     
+    PTCON1=0b10000000; //PWM time base timer      
+    PWMCON0=0b00110111;// ,PWM0 and PWM1 in complementary mode  
+    PWMCON1=0b00000000;      
+    PTPERH=0x01;       
+    PTPERL=0x38; 
+    PDC0L=0b00110100;     
+    PDC0H=0b00000011;
+}

@@ -3,6 +3,12 @@
 [d edition pro ]
 [d chip 18F4431 ]
 [d frameptr 4065 ]
+"7 /opt/microchip/xc8/v2.05/pic/sources/c99/common/__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 /opt/microchip/xc8/v2.05/pic/sources/c99/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 /opt/microchip/xc8/v2.05/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "72 /opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 [v i2_pad pad `(i  1 s 2 i2_pad ]
@@ -59,6 +65,8 @@
 "4 /opt/microchip/xc8/v2.05/pic/sources/c99/common/toupper.c
 [v _toupper toupper `(i  1 e 2 0 ]
 [v i2_toupper toupper `(i  1 e 2 0 ]
+"15 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul64.c
@@ -67,20 +75,74 @@
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 "97
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"34 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
+"36 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
 [v _main main `(v  1 e 1 0 ]
+"73
+[v _test test `(v  1 e 1 0 ]
 "24 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
-"28 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
+"31 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
-"45
+"48
 [v _init_usart init_usart `(v  1 e 1 0 ]
-"70
+"73
 [v _init_timer init_timer `(v  1 e 1 0 ]
-"89
+"111
+[v _PWMError PWMError `(v  1 s 1 PWMError ]
+"212
 [v _putch putch `(v  1 e 1 0 ]
 [v i2_putch putch `(v  1 e 1 0 ]
-[s S79 . 1 `uc 1 RB0 1 0 :1:0 
+"693 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[v _PWMCON1 PWMCON1 `VEuc  1 e 1 @3950 ]
+"759
+[v _PWMCON0 PWMCON0 `VEuc  1 e 1 @3951 ]
+[s S584 . 1 `uc 1 PMOD 1 0 :4:0 
+`uc 1 PWMEN 1 0 :3:4 
+]
+"779
+[s S587 . 1 `uc 1 PMOD0 1 0 :1:0 
+`uc 1 PMOD1 1 0 :1:1 
+`uc 1 PMOD2 1 0 :1:2 
+`uc 1 PMOD3 1 0 :1:3 
+`uc 1 PWMEN0 1 0 :1:4 
+`uc 1 PWMEN1 1 0 :1:5 
+`uc 1 PWMEN2 1 0 :1:6 
+]
+[u S595 . 1 `S584 1 . 1 0 `S587 1 . 1 0 ]
+[v _PWMCON0bits PWMCON0bits `VES595  1 e 1 @3951 ]
+"885
+[v _PDC0H PDC0H `VEuc  1 e 1 @3960 ]
+"892
+[v _PDC0L PDC0L `VEuc  1 e 1 @3961 ]
+"899
+[v _PTPERH PTPERH `VEuc  1 e 1 @3962 ]
+"906
+[v _PTPERL PTPERL `VEuc  1 e 1 @3963 ]
+"927
+[v _PTCON1 PTCON1 `VEuc  1 e 1 @3966 ]
+"954
+[v _PTCON0 PTCON0 `VEuc  1 e 1 @3967 ]
+[s S552 . 1 `uc 1 PTMOD 1 0 :2:0 
+`uc 1 PTCKPS 1 0 :2:2 
+`uc 1 PTOPS 1 0 :4:4 
+]
+"976
+[s S556 . 1 `uc 1 PTMOD0 1 0 :1:0 
+`uc 1 PTMOD1 1 0 :1:1 
+`uc 1 PTCKPS0 1 0 :1:2 
+`uc 1 PTCKPS1 1 0 :1:3 
+`uc 1 PTOPS0 1 0 :1:4 
+`uc 1 PTOPS1 1 0 :1:5 
+`uc 1 PTOPS2 1 0 :1:6 
+`uc 1 PTOPS3 1 0 :1:7 
+]
+[u S565 . 1 `S552 1 . 1 0 `S556 1 . 1 0 ]
+[v _PTCON0bits PTCON0bits `VES565  1 e 1 @3967 ]
+"1036
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"1197
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S613 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -89,25 +151,42 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-"1218 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
-[s S88 . 1 `uc 1 . 1 0 :3:0 
+"1218
+[s S622 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S91 . 1 `S79 1 . 1 0 `S88 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES91  1 e 1 @3969 ]
-[s S154 . 1 `uc 1 TRISB0 1 0 :1:0 
-`uc 1 TRISB1 1 0 :1:1 
-`uc 1 TRISB2 1 0 :1:2 
-`uc 1 TRISB3 1 0 :1:3 
-`uc 1 TRISB4 1 0 :1:4 
-`uc 1 TRISB5 1 0 :1:5 
-`uc 1 TRISB6 1 0 :1:6 
-`uc 1 TRISB7 1 0 :1:7 
+[u S625 . 1 `S613 1 . 1 0 `S622 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES625  1 e 1 @3969 ]
+"1534
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S79 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
 ]
-"2527
-[u S172 . 1 `S154 1 . 1 0 `S79 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES172  1 e 1 @3987 ]
-[s S202 . 1 `uc 1 TRISC0 1 0 :1:0 
+"1555
+[s S88 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S91 . 1 `S79 1 . 1 0 `S88 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES91  1 e 1 @3971 ]
+"1605
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+"1752
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1864
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"2088
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"2200
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"2495
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+[s S225 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -117,7 +196,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "2749
-[s S211 . 1 `uc 1 RC0 1 0 :1:0 
+[s S234 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -126,9 +205,23 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S220 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES220  1 e 1 @3988 ]
-[s S348 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S243 . 1 `S225 1 . 1 0 `S234 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES243  1 e 1 @3988 ]
+"2939
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S177 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"2971
+[u S195 . 1 `S177 1 . 1 0 `S79 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES195  1 e 1 @3989 ]
+[s S371 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -138,20 +231,20 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "4229
-[s S357 . 1 `uc 1 . 1 0 :4:0 
+[s S380 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S362 . 1 `uc 1 . 1 0 :5:0 
+[s S385 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S365 . 1 `uc 1 . 1 0 :1:0 
+[s S388 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S368 . 1 `S348 1 . 1 0 `S357 1 . 1 0 `S362 1 . 1 0 `S365 1 . 1 0 ]
-[v _BAUDCONbits BAUDCONbits `VES368  1 e 1 @4010 ]
-[s S294 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S391 . 1 `S371 1 . 1 0 `S380 1 . 1 0 `S385 1 . 1 0 `S388 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES391  1 e 1 @4010 ]
+[s S317 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -161,25 +254,25 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "4513
-[s S303 . 1 `uc 1 . 1 0 :3:0 
+[s S326 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S306 . 1 `uc 1 . 1 0 :5:0 
+[s S329 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S309 . 1 `uc 1 . 1 0 :6:0 
+[s S332 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S312 . 1 `uc 1 . 1 0 :6:0 
+[s S335 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S315 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S338 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S317 . 1 `S294 1 . 1 0 `S303 1 . 1 0 `S306 1 . 1 0 `S309 1 . 1 0 `S312 1 . 1 0 `S315 1 . 1 0 ]
-[v _RCSTA1bits RCSTA1bits `VES317  1 e 1 @4011 ]
+[u S340 . 1 `S317 1 . 1 0 `S326 1 . 1 0 `S329 1 . 1 0 `S332 1 . 1 0 `S335 1 . 1 0 `S338 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES340  1 e 1 @4011 ]
 "4583
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
-[s S242 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S265 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -189,7 +282,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4744
-[s S251 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S274 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -198,33 +291,33 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S260 . 1 `uc 1 . 1 0 :6:0 
+[s S283 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S263 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S286 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S265 . 1 `S242 1 . 1 0 `S251 1 . 1 0 `S260 1 . 1 0 `S263 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES265  1 e 1 @4012 ]
+[u S288 . 1 `S265 1 . 1 0 `S274 1 . 1 0 `S283 1 . 1 0 `S286 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES288  1 e 1 @4012 ]
 "4839
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "4868
 [v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
-[s S451 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S474 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "6515
-[s S453 . 1 `uc 1 . 1 0 :1:0 
+[s S476 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S456 . 1 `uc 1 . 1 0 :2:0 
+[s S479 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S459 . 1 `uc 1 . 1 0 :3:0 
+[s S482 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S462 . 1 `uc 1 . 1 0 :4:0 
+[s S485 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S465 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S488 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -232,10 +325,10 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S473 . 1 `uc 1 . 1 0 :7:0 
+[s S496 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_IPEN 1 0 :1:7 
 ]
-[s S476 . 1 `uc 1 BOR 1 0 :1:0 
+[s S499 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -243,9 +336,9 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 nIPEN 1 0 :1:7 
 ]
-[u S484 . 1 `S451 1 . 1 0 `S453 1 . 1 0 `S456 1 . 1 0 `S459 1 . 1 0 `S462 1 . 1 0 `S465 1 . 1 0 `S473 1 . 1 0 `S476 1 . 1 0 ]
-[v _RCONbits RCONbits `VES484  1 e 1 @4048 ]
-[s S395 . 1 `uc 1 T0PS 1 0 :3:0 
+[u S507 . 1 `S474 1 . 1 0 `S476 1 . 1 0 `S479 1 . 1 0 `S482 1 . 1 0 `S485 1 . 1 0 `S488 1 . 1 0 `S496 1 . 1 0 `S499 1 . 1 0 ]
+[v _RCONbits RCONbits `VES507  1 e 1 @4048 ]
+[s S418 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -253,13 +346,13 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6809
-[s S402 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S425 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
-[u S407 . 1 `S395 1 . 1 0 `S402 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES407  1 e 1 @4053 ]
+[u S430 . 1 `S418 1 . 1 0 `S425 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES430  1 e 1 @4053 ]
 "6864
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
 [s S24 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -299,10 +392,17 @@
 [v _nout nout `i  1 s 2 nout ]
 "4 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/interrupts.c
 [v _timer0_var timer0_var `i  1 e 2 0 ]
-"34 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
+"108 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
+[v _PWMPeriod PWMPeriod `i  1 s 2 PWMPeriod ]
+"36 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"68
+"71
+} 0
+"73
+[v _test test `(v  1 e 1 0 ]
+{
+"92
 } 0
 "5 /opt/microchip/xc8/v2.05/pic/sources/c99/common/printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -318,9 +418,9 @@
 {
 "1371
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 108 ]
-[s S596 _IO_FILE 0 ]
+[s S747 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S596  1 p 2 102 ]
+[v vfprintf@fp fp `*.2S747  1 p 2 102 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 104 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 106 ]
 "1382
@@ -332,9 +432,9 @@
 [v vfpfcnvrt@llu llu `uo  1 a 8 93 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 101 ]
-[s S596 _IO_FILE 0 ]
+[s S747 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S596  1 p 2 83 ]
+[v vfpfcnvrt@fp fp `*.2S747  1 p 2 83 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 85 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 87 ]
 "1365
@@ -349,9 +449,9 @@
 [v xtoa@i i `i  1 a 2 79 ]
 [v xtoa@w w `i  1 a 2 69 ]
 [v xtoa@p p `i  1 a 2 67 ]
-[s S596 _IO_FILE 0 ]
+[s S747 _IO_FILE 0 ]
 "623
-[v xtoa@fp fp `*.2S596  1 p 2 44 ]
+[v xtoa@fp fp `*.2S747  1 p 2 44 ]
 [v xtoa@d d `uo  1 p 8 46 ]
 [v xtoa@x x `uc  1 p 1 54 ]
 "665
@@ -374,9 +474,9 @@
 "74
 [v pad@w w `i  1 a 2 42 ]
 [v pad@i i `i  1 a 2 40 ]
-[s S596 _IO_FILE 0 ]
+[s S747 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S596  1 p 2 33 ]
+[v pad@fp fp `*.2S747  1 p 2 33 ]
 [v pad@buf buf `*.39uc  1 p 2 35 ]
 [v pad@p p `i  1 p 2 37 ]
 "95
@@ -399,25 +499,25 @@
 [v fputs@c c `uc  1 a 1 30 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 26 ]
-[s S1132 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1132  1 p 2 28 ]
+[s S1283 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1283  1 p 2 28 ]
 "19
 } 0
 "8 /opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 17 ]
-[s S1132 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1132  1 p 2 19 ]
+[s S1283 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1283  1 p 2 19 ]
 "21
 } 0
-"89 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
+"212 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@byte byte `uc  1 a 1 wreg ]
 [v putch@byte byte `uc  1 a 1 wreg ]
 [v putch@byte byte `uc  1 a 1 16 ]
-"94
+"217
 } 0
 "5 /opt/microchip/xc8/v2.05/pic/sources/c99/common/isupper.c
 [v _isupper isupper `(i  1 e 2 0 ]
@@ -431,20 +531,20 @@
 [v isalpha@c c `i  1 p 2 16 ]
 "8
 } 0
-"28 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
+"31 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"43
+"46
 } 0
-"45
+"48
 [v _init_usart init_usart `(v  1 e 1 0 ]
 {
-"68
+"71
 } 0
-"70
+"73
 [v _init_timer init_timer `(v  1 e 1 0 ]
 {
-"87
+"90
 } 0
 "24 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
@@ -473,8 +573,8 @@
 [v i2_vfprintf vfprintf `(i  1 e 2 0 ]
 {
 [v i2vfprintf@cfmt vfprintf `*.32uc  1 a 2 92 ]
-[s S596 _IO_FILE 0 ]
-[v i2vfprintf@fp fp `*.2S596  1 p 2 86 ]
+[s S747 _IO_FILE 0 ]
+[v i2vfprintf@fp fp `*.2S747  1 p 2 86 ]
 [v i2vfprintf@fmt fmt `*.32Cuc  1 p 2 88 ]
 [v i2vfprintf@ap ap `*.39*.39v  1 p 2 90 ]
 "1382
@@ -484,8 +584,8 @@
 {
 [v i2vfpfcnvrt@llu vfpfcnvrt `uo  1 a 8 77 ]
 [v i2vfpfcnvrt@c vfpfcnvrt `uc  1 a 1 85 ]
-[s S596 _IO_FILE 0 ]
-[v i2vfpfcnvrt@fp fp `*.2S596  1 p 2 67 ]
+[s S747 _IO_FILE 0 ]
+[v i2vfpfcnvrt@fp fp `*.2S747  1 p 2 67 ]
 [v i2vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 69 ]
 [v i2vfpfcnvrt@ap ap `*.39*.39v  1 p 2 71 ]
 "1365
@@ -498,8 +598,8 @@
 [v i2xtoa@i xtoa `i  1 a 2 63 ]
 [v i2xtoa@w xtoa `i  1 a 2 53 ]
 [v i2xtoa@p xtoa `i  1 a 2 51 ]
-[s S596 _IO_FILE 0 ]
-[v i2xtoa@fp fp `*.2S596  1 p 2 28 ]
+[s S747 _IO_FILE 0 ]
+[v i2xtoa@fp fp `*.2S747  1 p 2 28 ]
 [v i2xtoa@d d `uo  1 p 8 30 ]
 [v i2xtoa@x x `uc  1 p 1 38 ]
 "665
@@ -521,8 +621,8 @@
 {
 [v i2pad@w pad `i  1 a 2 26 ]
 [v i2pad@i pad `i  1 a 2 24 ]
-[s S596 _IO_FILE 0 ]
-[v i2pad@fp fp `*.2S596  1 p 2 17 ]
+[s S747 _IO_FILE 0 ]
+[v i2pad@fp fp `*.2S747  1 p 2 17 ]
 [v i2pad@buf buf `*.39uc  1 p 2 19 ]
 [v i2pad@p p `i  1 p 2 21 ]
 "95
@@ -540,25 +640,25 @@
 [v i2fputs@i fputs `i  1 a 2 15 ]
 [v i2fputs@c fputs `uc  1 a 1 14 ]
 [v i2fputs@s s `*.39Cuc  1 p 2 10 ]
-[s S1132 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v i2fputs@fp fp `*.2S1132  1 p 2 12 ]
+[s S1283 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v i2fputs@fp fp `*.2S1283  1 p 2 12 ]
 "19
 } 0
 "8 /opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
 [v i2_fputc fputc `(i  1 e 2 0 ]
 {
 [v i2fputc@c c `i  1 p 2 1 ]
-[s S1132 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v i2fputc@fp fp `*.2S1132  1 p 2 3 ]
+[s S1283 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v i2fputc@fp fp `*.2S1283  1 p 2 3 ]
 "21
 } 0
-"89 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
+"212 /home/mike/MPLABXProjects/pic18f4431_motor_controller.X/user.c
 [v i2_putch putch `(v  1 e 1 0 ]
 {
 [v i2putch@byte byte `uc  1 a 1 wreg ]
 [v i2putch@byte byte `uc  1 a 1 wreg ]
 [v i2putch@byte byte `uc  1 a 1 0 ]
-"94
+"217
 } 0
 "5 /opt/microchip/xc8/v2.05/pic/sources/c99/common/isupper.c
 [v i2_isupper isupper `(i  1 e 2 0 ]

@@ -5219,17 +5219,6 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 156 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 2 3
 # 16 "user.c" 2
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
-# 17 "user.c" 2
-
-
-
-# 1 "./user.h" 1
-
-
-
-
-
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
@@ -5366,18 +5355,27 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 7 "./user.h" 2
+# 17 "user.c" 2
+
+# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
+# 19 "user.c" 2
 
 
 
-
-
-
-
+# 1 "./user.h" 1
+# 15 "./user.h"
 void InitApp(void);
 void init_usart(void);
 void init_timer(void);
-# 21 "user.c" 2
+void init_pwm(void);
+void enablePWM(char);
+void configPWMFreq(unsigned long freq);
+void setPDC0(long dutyCyclePercent);
+# 23 "user.c" 2
+# 1 "./system.h" 1
+# 21 "./system.h"
+void ConfigureOscillator(void);
+# 24 "user.c" 2
 
 
 
@@ -5390,8 +5388,8 @@ void InitApp(void)
 
 
 
-    TRISBbits.TRISB0 = 0;
-    TRISBbits.RB1 = 0;
+    TRISDbits.RD7 = 0;
+    TRISDbits.RD6 = 0;
 
 
     init_usart();
@@ -5434,7 +5432,7 @@ void init_timer(void)
     T0CONbits.T016BIT = 0;
     T0CONbits.T0CS = 0;
     T0CONbits.PSA = 0;
-    T0CONbits.T0PS = 0b111;
+    T0CONbits.T0PS = 0b011;
     TMR0 = 0;
     INTCONbits.T0IF = 0;
     INTCONbits.T0IE = 1;
@@ -5445,6 +5443,101 @@ void init_timer(void)
 
 
 }
+
+void init_pwm(void)
+{
+    PDC0H = 0x00;
+    PDC0L = 0xFF;
+
+    PTCON0bits.PTOPS = 0b000;
+    PTCON0bits.PTCKPS = 0b00;
+    PTCON0bits.PTMOD = 0b00;
+
+    PTPERL = 0xFF;
+    PTPERH = 0x0F;
+
+    PWMCON0bits.PWMEN = 0b010;
+    PWMCON0bits.PMOD0 = 0;
+}
+
+static int PWMPeriod;
+
+
+static void PWMError(void){
+
+ unsigned int i;
+ TRISB = 0;
+ PWMCON0 = 0;
+ printf("PWM Error");
+ while(1){
+
+  PORTBbits.RB5 = 1;
+  _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+  PORTBbits.RB5 = 0;
+  _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+ }
+}
+
+void enablePWM(char PWM_BITMASK){
+# 153 "user.c"
+ PWMCON0=0b11111111 & PWM_BITMASK;
+}
+
+
+void configPWMFreq(unsigned long freq){
+
+ int timeBasePreScale;
+ long tempLong;
+ int scale;
+
+ if (freq > (20000000L/4/2)){
+  PWMError();
+
+ }
+ else if (freq > (20000000L/16384)){
+  timeBasePreScale = 1;
+  PTCON0 |= 0b00000000;
+ }
+ else if (freq > (20000000L/65536)){
+  timeBasePreScale = 4;
+  PTCON0 |= 0b00000100;
+ }
+ else if (freq > (20000000L/262144)){
+  timeBasePreScale = 16;
+  PTCON0 |= 0b00001000;
+ }
+ else if (freq > (20000000L/1048576)){
+  timeBasePreScale = 64;
+  PTCON0 |= 0b00001100;
+ }
+ else {
+
+  PWMError();
+ }
+
+
+
+ PTCON1 = 0b10000000;
+
+
+
+ scale = timeBasePreScale*4;
+ tempLong = (20000000L/scale);
+ tempLong = tempLong/freq;
+ PWMPeriod= tempLong-1;
+ PTPERH=PWMPeriod/256;
+ PTPERL=PWMPeriod%256;
+}
+
+void setPDC0(long dutyCyclePercent)
+{
+    int dutyCycle = PWMPeriod*(50+100)/200;
+    int dutyCycleQC = dutyCycle*4;
+    PDC0H = dutyCycleQC/256;
+    PDC0L = dutyCycleQC%256;
+
+}
+
 
 void putch(unsigned char byte) {
     TXSTA = 0x26;

@@ -25,21 +25,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6864 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
 [v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
-"1203
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"1213
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1213:     struct {
-[s S48 :3 `uc 1 :1 `uc 1 ]
-[n S48 . . CCP2_PA2 ]
-"1202
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1202: typedef union {
-[u S46 `S47 1 `S48 1 ]
-[n S46 . . . ]
-"1218
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1218: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS46 ~T0 @X0 0 e@3969 ]
+"1540
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1540:     struct {
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"1550
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1550:     struct {
+[s S61 :7 `uc 1 :1 `uc 1 ]
+[n S61 . . SS2 ]
+"1539
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1539: typedef union {
+[u S59 `S60 1 `S61 1 ]
+[n S59 . . . ]
+"1555
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1555: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
+[v _PORTDbits `VS59 ~T0 @X0 0 e@3971 ]
 [t T37 __interrupt low_priority ]
 "4 interrupts.c
 [; ;interrupts.c: 4: int timer0_var=0;
@@ -643,8 +643,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 83:             timer0_var = 0;
 [e = _timer0_var -> 0 `i ]
 "84
-[; ;interrupts.c: 84:             PORTBbits.RB0 = ~PORTBbits.RB0;
-[e = . . _PORTBbits 0 0 -> ~ -> . . _PORTBbits 0 0 `i `uc ]
+[; ;interrupts.c: 84:             PORTDbits.RD7 = ~PORTDbits.RD7;
+[e = . . _PORTDbits 0 7 -> ~ -> . . _PORTDbits 0 7 `i `uc ]
 "85
 [; ;interrupts.c: 85:         }
 }

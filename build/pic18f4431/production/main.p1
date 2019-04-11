@@ -3,14 +3,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21 ./system.h
 [; ;./system.h: 21: void ConfigureOscillator(void);
 [v _ConfigureOscillator `(v ~T0 @X0 0 ef ]
-"14 ./user.h
-[; ;./user.h: 14: void InitApp(void);
+"15 ./user.h
+[; ;./user.h: 15: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
+"33 main.c
+[; ;main.c: 33: void test(void);
+[v _test `(v ~T0 @X0 0 ef ]
 "113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "6864 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
 [v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"1036
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1036: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"1197
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1197: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"1534
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1534: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"1605
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1605: extern volatile unsigned char PORTE __attribute__((address(0xF84)));
+[v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
+"2495
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2495: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"2939
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2939: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"1752
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1752: extern volatile unsigned char LATA __attribute__((address(0xF89)));
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"1864
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1864: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"2088
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2088: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"2200
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2200: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
+"954
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 954: extern volatile unsigned char PTCON0 __attribute__((address(0xF7F)));
+[v _PTCON0 `Vuc ~T0 @X0 0 e@3967 ]
+"927
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 927: extern volatile unsigned char PTCON1 __attribute__((address(0xF7E)));
+[v _PTCON1 `Vuc ~T0 @X0 0 e@3966 ]
+"759
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 759: extern volatile unsigned char PWMCON0 __attribute__((address(0xF6F)));
+[v _PWMCON0 `Vuc ~T0 @X0 0 e@3951 ]
+"693
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 693: extern volatile unsigned char PWMCON1 __attribute__((address(0xF6E)));
+[v _PWMCON1 `Vuc ~T0 @X0 0 e@3950 ]
+"899
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 899: extern volatile unsigned char PTPERH __attribute__((address(0xF7A)));
+[v _PTPERH `Vuc ~T0 @X0 0 e@3962 ]
+"906
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 906: extern volatile unsigned char PTPERL __attribute__((address(0xF7B)));
+[v _PTPERL `Vuc ~T0 @X0 0 e@3963 ]
+"892
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 892: extern volatile unsigned char PDC0L __attribute__((address(0xF79)));
+[v _PDC0L `Vuc ~T0 @X0 0 e@3961 ]
+"885
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 885: extern volatile unsigned char PDC0H __attribute__((address(0xF78)));
+[v _PDC0H `Vuc ~T0 @X0 0 e@3960 ]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
 [; <" DFLTCON equ 0F60h ;# ">
@@ -552,47 +609,114 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"34 main.c
-[; ;main.c: 34: void main(void)
+"36 main.c
+[; ;main.c: 36: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"35
-[; ;main.c: 35: {
+"37
+[; ;main.c: 37: {
 {
 [e :U _main ]
 [f ]
-"37
-[; ;main.c: 37:     ConfigureOscillator();
+"39
+[; ;main.c: 39:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"40
-[; ;main.c: 40:     InitApp();
+"42
+[; ;main.c: 42:     InitApp();
 [e ( _InitApp ..  ]
 "44
-[; ;main.c: 44:     char x;
+[; ;main.c: 44:     test();
+[e ( _test ..  ]
+"47
+[; ;main.c: 47:     char x;
 [v _x `uc ~T0 @X0 1 a ]
-"45
-[; ;main.c: 45:     int val;
-[v _val `i ~T0 @X0 1 a ]
-"46
-[; ;main.c: 46:     val = 96;
-[e = _val -> 96 `i ]
 "48
-[; ;main.c: 48:     while(1)
-[e :U 318 ]
+[; ;main.c: 48:     int val;
+[v _val `i ~T0 @X0 1 a ]
 "49
-[; ;main.c: 49:     {
-{
+[; ;main.c: 49:     val = 96;
+[e = _val -> 96 `i ]
 "51
-[; ;main.c: 51:         printf("timer: %x\r\n", TMR0);
+[; ;main.c: 51:     while(1)
+[e :U 318 ]
+"52
+[; ;main.c: 52:     {
+{
+"54
+[; ;main.c: 54:         printf("timer: %x\r\n", TMR0);
 [e ( _printf , (. :s 1C -> _TMR0 `ui ]
-"66
-[; ;main.c: 66:     }
+"69
+[; ;main.c: 69:     }
 }
 [e :U 317 ]
 [e $U 318  ]
 [e :U 319 ]
-"68
-[; ;main.c: 68: }
+"71
+[; ;main.c: 71: }
 [e :UE 316 ]
+}
+"73
+[; ;main.c: 73: void test(void){
+[v _test `(v ~T0 @X0 1 ef ]
+{
+[e :U _test ]
+[f ]
+"74
+[; ;main.c: 74:     PORTA=0;
+[e = _PORTA -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
+"76
+[; ;main.c: 76:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
+"77
+[; ;main.c: 77:     PORTE=0;
+[e = _PORTE -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:     TRISB=0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:     TRISD=0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"80
+[; ;main.c: 80:     LATA=0b00110111;
+[e = _LATA -> -> 55 `i `uc ]
+"81
+[; ;main.c: 81:     LATB=0b00000000;
+[e = _LATB -> -> 0 `i `uc ]
+"82
+[; ;main.c: 82:     LATD=0b00000000;
+[e = _LATD -> -> 0 `i `uc ]
+"83
+[; ;main.c: 83:     LATE=0b00000011;
+[e = _LATE -> -> 3 `i `uc ]
+"84
+[; ;main.c: 84:     PTCON0=0b00001100;
+[e = _PTCON0 -> -> 12 `i `uc ]
+"85
+[; ;main.c: 85:     PTCON1=0b10000000;
+[e = _PTCON1 -> -> 128 `i `uc ]
+"86
+[; ;main.c: 86:     PWMCON0=0b00110111;
+[e = _PWMCON0 -> -> 55 `i `uc ]
+"87
+[; ;main.c: 87:     PWMCON1=0b00000000;
+[e = _PWMCON1 -> -> 0 `i `uc ]
+"88
+[; ;main.c: 88:     PTPERH=0x01;
+[e = _PTPERH -> -> 1 `i `uc ]
+"89
+[; ;main.c: 89:     PTPERL=0x38;
+[e = _PTPERL -> -> 56 `i `uc ]
+"90
+[; ;main.c: 90:     PDC0L=0b00110100;
+[e = _PDC0L -> -> 52 `i `uc ]
+"91
+[; ;main.c: 91:     PDC0H=0b00000011;
+[e = _PDC0H -> -> 3 `i `uc ]
+"92
+[; ;main.c: 92: }
+[e :UE 320 ]
 }
 [p f _printf 12582912 ]
 [a 1C 116 105 109 101 114 58 32 37 120 13 10 0 ]
