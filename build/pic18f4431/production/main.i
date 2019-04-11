@@ -5389,6 +5389,7 @@ void setPDC0(long dutyCyclePercent);
 # 22 "main.c" 2
 # 33 "main.c"
 void test(void);
+char * dec2hex(int value);
 
 
 void main(void)
@@ -5403,14 +5404,26 @@ void main(void)
 
 
     char x;
-    int val;
+    short int val;
     val = 96;
 
     while(1)
     {
 
-        printf("timer: %x\r\n", TMR0);
-# 69 "main.c"
+
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+        _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+
+
     }
 
 }
@@ -5426,12 +5439,26 @@ void test(void){
     LATB=0b00000000;
     LATD=0b00000000;
     LATE=0b00000011;
-    PTCON0=0b00001100;
-    PTCON1=0b10000000;
-    PWMCON0=0b00110111;
+
+    PTCON0bits.PTOPS = 0b000;
+    PTCON0bits.PTCKPS = 0b11;
+    PTCON0bits.PTMOD = 0b00;
+
+    PTCON1bits.PTEN = 1;
+    PTCON1bits.PTDIR = 0;
+
+    PWMCON0bits.PWMEN = 0b010;
+    PWMCON0bits.PMOD = 0b1110;
+
+
     PWMCON1=0b00000000;
+
+
+
     PTPERH=0x01;
     PTPERL=0x38;
-    PDC0L=0b00110100;
+
+
     PDC0H=0b00000011;
+    PDC0L=0b00110100;
 }

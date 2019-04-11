@@ -5446,18 +5446,27 @@ void init_timer(void)
 
 void init_pwm(void)
 {
-    PDC0H = 0x00;
-    PDC0L = 0xFF;
-
     PTCON0bits.PTOPS = 0b000;
-    PTCON0bits.PTCKPS = 0b00;
+    PTCON0bits.PTCKPS = 0b11;
     PTCON0bits.PTMOD = 0b00;
 
-    PTPERL = 0xFF;
-    PTPERH = 0x0F;
+    PTCON1bits.PTEN = 1;
+    PTCON1bits.PTDIR = 0;
 
     PWMCON0bits.PWMEN = 0b010;
-    PWMCON0bits.PMOD0 = 0;
+    PWMCON0bits.PMOD = 0b1110;
+
+
+    PWMCON1=0b00000000;
+
+
+
+    PTPERH=0x01;
+    PTPERL=0x38;
+
+
+    PDC0H=0b00000011;
+    PDC0L=0b00110100;
 }
 
 static int PWMPeriod;
@@ -5479,7 +5488,7 @@ static void PWMError(void){
 }
 
 void enablePWM(char PWM_BITMASK){
-# 153 "user.c"
+# 162 "user.c"
  PWMCON0=0b11111111 & PWM_BITMASK;
 }
 

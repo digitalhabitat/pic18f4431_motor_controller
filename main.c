@@ -31,6 +31,7 @@
 /* Main Program                                                               */
 /******************************************************************************/
 void test(void);
+char * dec2hex(int value);
 
 
 void main(void)
@@ -45,27 +46,26 @@ void main(void)
     /* TODO <INSERT USER APPLICATION CODE HERE> */
     
     char x;
-    int val;
+    short int val;
     val = 96;
     
     while(1)
     {
 
-        printf("timer: %x\r\n", TMR0);
-       /* PORTBbits.RB0 = 1;s
+       // PORTBbits.RB0 = 1;s
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
-        PORTBbits.RB0 = 0;
+       /// PORTBbits.RB0 = 0;
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
         __delaywdt_ms(100);
-       T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
-        */
+       //T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
+       // */
     }
 
 }
@@ -81,12 +81,26 @@ void test(void){
     LATB=0b00000000; 
     LATD=0b00000000; 
     LATE=0b00000011; 
-    PTCON0=0b00001100; //1:1 postcalw,  1:64 prescale  ,free-running mode     
-    PTCON1=0b10000000; //PWM time base timer      
-    PWMCON0=0b00110111;// ,PWM0 and PWM1 in complementary mode  
+    
+    PTCON0bits.PTOPS = 0b000;   // 1:1 PWM Time Base Output Postscale
+    PTCON0bits.PTCKPS = 0b11;   // PWM time Fosc/256 (1:64 presale)
+    PTCON0bits.PTMOD = 0b00;    // PWM time base operates in a Free-Running mode    
+    
+    PTCON1bits.PTEN = 1;        // PWM time base Timer is on
+    PTCON1bits.PTDIR = 0;       // PWM time base counts up    
+    
+    PWMCON0bits.PWMEN = 0b010;  // PWM0 and PWM1 pins are enabled for PWM output
+    PWMCON0bits.PMOD  = 0b1110; // (PWM0, PWM1) is in Complementary mode
+    
+    //PWMCON1bits.UDIS = 1;       //
     PWMCON1=0b00000000;      
-    PTPERH=0x01;       
-    PTPERL=0x38; 
-    PDC0L=0b00110100;     
-    PDC0H=0b00000011;
+    
+    //  PWM Period Register pair Tpwm = (PTPER+1)*PTMRPS/(0.25*Fosc)
+    //  12 bit-resolution
+    PTPERH=0x01;        // 4 bits wide    
+    PTPERL=0x38;        // 8 bits wide
+    
+    // PWM Duty Cycle 14-bit resolution 
+    PDC0H=0b00000011;   // 6 bits wide
+    PDC0L=0b00110100;   // 8 bits wide 
 }

@@ -9,12 +9,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33 main.c
 [; ;main.c: 33: void test(void);
 [v _test `(v ~T0 @X0 0 ef ]
-"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"6864 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
-[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
-"1036
+[v F2766 `(v ~T0 @X0 1 tf1`ul ]
+"185 /opt/microchip/xc8/v2.05/pic/include/pic18.h
+[v __delaywdt `JF2766 ~T0 @X0 0 e ]
+[p i __delaywdt ]
+"1036 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1036: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "1197
@@ -44,15 +43,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2200
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2200: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
 [v _LATE `Vuc ~T0 @X0 0 e@3981 ]
-"954
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 954: extern volatile unsigned char PTCON0 __attribute__((address(0xF7F)));
-[v _PTCON0 `Vuc ~T0 @X0 0 e@3967 ]
-"927
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 927: extern volatile unsigned char PTCON1 __attribute__((address(0xF7E)));
-[v _PTCON1 `Vuc ~T0 @X0 0 e@3966 ]
-"759
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 759: extern volatile unsigned char PWMCON0 __attribute__((address(0xF6F)));
-[v _PWMCON0 `Vuc ~T0 @X0 0 e@3951 ]
+"960
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 960:     struct {
+[s S39 :2 `uc 1 :2 `uc 1 :4 `uc 1 ]
+[n S39 . PTMOD PTCKPS PTOPS ]
+"965
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 965:     struct {
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . PTMOD0 PTMOD1 PTCKPS0 PTCKPS1 PTOPS0 PTOPS1 PTOPS2 PTOPS3 ]
+"959
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 959: typedef union {
+[u S38 `S39 1 `S40 1 ]
+[n S38 . . . ]
+"976
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 976: extern volatile PTCON0bits_t PTCON0bits __attribute__((address(0xF7F)));
+[v _PTCON0bits `VS38 ~T0 @X0 0 e@3967 ]
+"933
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 933:     struct {
+[s S37 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . . PTDIR PTEN ]
+"932
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 932: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"939
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 939: extern volatile PTCON1bits_t PTCON1bits __attribute__((address(0xF7E)));
+[v _PTCON1bits `VS36 ~T0 @X0 0 e@3966 ]
+"765
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 765:     struct {
+[s S34 :4 `uc 1 :3 `uc 1 ]
+[n S34 . PMOD PWMEN ]
+"769
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 769:     struct {
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . PMOD0 PMOD1 PMOD2 PMOD3 PWMEN0 PWMEN1 PWMEN2 ]
+"764
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 764: typedef union {
+[u S33 `S34 1 `S35 1 ]
+[n S33 . . . ]
+"779
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 779: extern volatile PWMCON0bits_t PWMCON0bits __attribute__((address(0xF6F)));
+[v _PWMCON0bits `VS33 ~T0 @X0 0 e@3951 ]
 "693
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 693: extern volatile unsigned char PWMCON1 __attribute__((address(0xF6E)));
 [v _PWMCON1 `Vuc ~T0 @X0 0 e@3950 ]
@@ -62,12 +93,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "906
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 906: extern volatile unsigned char PTPERL __attribute__((address(0xF7B)));
 [v _PTPERL `Vuc ~T0 @X0 0 e@3963 ]
-"892
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 892: extern volatile unsigned char PDC0L __attribute__((address(0xF79)));
-[v _PDC0L `Vuc ~T0 @X0 0 e@3961 ]
 "885
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 885: extern volatile unsigned char PDC0H __attribute__((address(0xF78)));
 [v _PDC0H `Vuc ~T0 @X0 0 e@3960 ]
+"892
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 892: extern volatile unsigned char PDC0L __attribute__((address(0xF79)));
+[v _PDC0L `Vuc ~T0 @X0 0 e@3961 ]
 "54 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 54: __asm("DFLTCON equ 0F60h");
 [; <" DFLTCON equ 0F60h ;# ">
@@ -609,41 +640,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"36 main.c
-[; ;main.c: 36: void main(void)
+"37 main.c
+[; ;main.c: 37: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"37
-[; ;main.c: 37: {
+"38
+[; ;main.c: 38: {
 {
 [e :U _main ]
 [f ]
-"39
-[; ;main.c: 39:     ConfigureOscillator();
+"40
+[; ;main.c: 40:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"42
-[; ;main.c: 42:     InitApp();
+"43
+[; ;main.c: 43:     InitApp();
 [e ( _InitApp ..  ]
-"44
-[; ;main.c: 44:     test();
+"45
+[; ;main.c: 45:     test();
 [e ( _test ..  ]
-"47
-[; ;main.c: 47:     char x;
-[v _x `uc ~T0 @X0 1 a ]
 "48
-[; ;main.c: 48:     int val;
-[v _val `i ~T0 @X0 1 a ]
+[; ;main.c: 48:     char x;
+[v _x `uc ~T0 @X0 1 a ]
 "49
-[; ;main.c: 49:     val = 96;
-[e = _val -> 96 `i ]
-"51
-[; ;main.c: 51:     while(1)
-[e :U 318 ]
+[; ;main.c: 49:     short int val;
+[v _val `s ~T0 @X0 1 a ]
+"50
+[; ;main.c: 50:     val = 96;
+[e = _val -> -> 96 `i `s ]
 "52
-[; ;main.c: 52:     {
+[; ;main.c: 52:     while(1)
+[e :U 318 ]
+"53
+[; ;main.c: 53:     {
 {
-"54
-[; ;main.c: 54:         printf("timer: %x\r\n", TMR0);
-[e ( _printf , (. :s 1C -> _TMR0 `ui ]
+"56
+[; ;main.c: 56:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"57
+[; ;main.c: 57:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"58
+[; ;main.c: 58:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"59
+[; ;main.c: 59:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"60
+[; ;main.c: 60:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"62
+[; ;main.c: 62:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"63
+[; ;main.c: 63:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"64
+[; ;main.c: 64:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"65
+[; ;main.c: 65:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"66
+[; ;main.c: 66:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "69
 [; ;main.c: 69:     }
 }
@@ -690,33 +748,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;main.c: 83:     LATE=0b00000011;
 [e = _LATE -> -> 3 `i `uc ]
-"84
-[; ;main.c: 84:     PTCON0=0b00001100;
-[e = _PTCON0 -> -> 12 `i `uc ]
 "85
-[; ;main.c: 85:     PTCON1=0b10000000;
-[e = _PTCON1 -> -> 128 `i `uc ]
+[; ;main.c: 85:     PTCON0bits.PTOPS = 0b000;
+[e = . . _PTCON0bits 0 2 -> -> 0 `i `uc ]
 "86
-[; ;main.c: 86:     PWMCON0=0b00110111;
-[e = _PWMCON0 -> -> 55 `i `uc ]
+[; ;main.c: 86:     PTCON0bits.PTCKPS = 0b11;
+[e = . . _PTCON0bits 0 1 -> -> 3 `i `uc ]
 "87
-[; ;main.c: 87:     PWMCON1=0b00000000;
-[e = _PWMCON1 -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:     PTPERH=0x01;
-[e = _PTPERH -> -> 1 `i `uc ]
+[; ;main.c: 87:     PTCON0bits.PTMOD = 0b00;
+[e = . . _PTCON0bits 0 0 -> -> 0 `i `uc ]
 "89
-[; ;main.c: 89:     PTPERL=0x38;
-[e = _PTPERL -> -> 56 `i `uc ]
+[; ;main.c: 89:     PTCON1bits.PTEN = 1;
+[e = . . _PTCON1bits 0 2 -> -> 1 `i `uc ]
 "90
-[; ;main.c: 90:     PDC0L=0b00110100;
-[e = _PDC0L -> -> 52 `i `uc ]
-"91
-[; ;main.c: 91:     PDC0H=0b00000011;
-[e = _PDC0H -> -> 3 `i `uc ]
+[; ;main.c: 90:     PTCON1bits.PTDIR = 0;
+[e = . . _PTCON1bits 0 1 -> -> 0 `i `uc ]
 "92
-[; ;main.c: 92: }
+[; ;main.c: 92:     PWMCON0bits.PWMEN = 0b010;
+[e = . . _PWMCON0bits 0 1 -> -> 2 `i `uc ]
+"93
+[; ;main.c: 93:     PWMCON0bits.PMOD = 0b1110;
+[e = . . _PWMCON0bits 0 0 -> -> 14 `i `uc ]
+"96
+[; ;main.c: 96:     PWMCON1=0b00000000;
+[e = _PWMCON1 -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:     PTPERH=0x01;
+[e = _PTPERH -> -> 1 `i `uc ]
+"101
+[; ;main.c: 101:     PTPERL=0x38;
+[e = _PTPERL -> -> 56 `i `uc ]
+"104
+[; ;main.c: 104:     PDC0H=0b00000011;
+[e = _PDC0H -> -> 3 `i `uc ]
+"105
+[; ;main.c: 105:     PDC0L=0b00110100;
+[e = _PDC0L -> -> 52 `i `uc ]
+"106
+[; ;main.c: 106: }
 [e :UE 320 ]
 }
-[p f _printf 12582912 ]
-[a 1C 116 105 109 101 114 58 32 37 120 13 10 0 ]
