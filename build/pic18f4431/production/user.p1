@@ -247,39 +247,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "892
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 892: extern volatile unsigned char PDC0L __attribute__((address(0xF79)));
 [v _PDC0L `Vuc ~T0 @X0 0 e@3961 ]
-"2495
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2495: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"759
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 759: extern volatile unsigned char PWMCON0 __attribute__((address(0xF6F)));
-[v _PWMCON0 `Vuc ~T0 @X0 0 e@3951 ]
-"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"1203 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"1213
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1213:     struct {
-[s S48 :3 `uc 1 :1 `uc 1 ]
-[n S48 . . CCP2_PA2 ]
-"1202
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1202: typedef union {
-[u S46 `S47 1 `S48 1 ]
-[n S46 . . . ]
-"1218
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1218: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
-[v _PORTBbits `VS46 ~T0 @X0 0 e@3969 ]
-[v F2766 `(v ~T0 @X0 1 tf1`ul ]
-"185 /opt/microchip/xc8/v2.05/pic/include/pic18.h
-[v __delaywdt `JF2766 ~T0 @X0 0 e ]
-[p i __delaywdt ]
-"954 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 954: extern volatile unsigned char PTCON0 __attribute__((address(0xF7F)));
-[v _PTCON0 `Vuc ~T0 @X0 0 e@3967 ]
-"927
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 927: extern volatile unsigned char PTCON1 __attribute__((address(0xF7E)));
-[v _PTCON1 `Vuc ~T0 @X0 0 e@3966 ]
 "4583
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 4583: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
 [v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
@@ -994,252 +961,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 115: }
 [e :UE 319 ]
 }
-"117
-[; ;user.c: 117: static int PWMPeriod;
-[v _PWMPeriod `i ~T0 @X0 1 s ]
-"120
-[; ;user.c: 120: static void PWMError(void){
-[v _PWMError `(v ~T0 @X0 1 sf ]
-{
-[e :U _PWMError ]
-[f ]
-"122
-[; ;user.c: 122:  unsigned int i;
-[v _i `ui ~T0 @X0 1 a ]
-"123
-[; ;user.c: 123:  TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"124
-[; ;user.c: 124:  PWMCON0 = 0;
-[e = _PWMCON0 -> -> 0 `i `uc ]
-"125
-[; ;user.c: 125:  printf("PWM Error");
-[e ( _printf :s 1C ]
-"126
-[; ;user.c: 126:  while(1){
-[e :U 322 ]
-{
-"128
-[; ;user.c: 128:   PORTBbits.RB5 = 1;
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-"129
-[; ;user.c: 129:   _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> / -> 20000000 `l -> -> 5000 `i `l `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"130
-[; ;user.c: 130:   PORTBbits.RB5 = 0;
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-"131
-[; ;user.c: 131:   _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> / -> 20000000 `l -> -> 5000 `i `l `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"132
-[; ;user.c: 132:  }
-}
-[e :U 321 ]
-[e $U 322  ]
-[e :U 323 ]
-"133
-[; ;user.c: 133: }
-[e :UE 320 ]
-}
-"135
-[; ;user.c: 135: void enablePWM(char PWM_BITMASK){
-[v _enablePWM `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _enablePWM ]
-[v _PWM_BITMASK `uc ~T0 @X0 1 r1 ]
-[f ]
-"162
-[; ;user.c: 162:  PWMCON0=0b11111111 & PWM_BITMASK;
-[e = _PWMCON0 -> & -> 255 `i -> _PWM_BITMASK `i `uc ]
-"163
-[; ;user.c: 163: }
-[e :UE 324 ]
-}
-"166
-[; ;user.c: 166: void configPWMFreq(unsigned long freq){
-[v _configPWMFreq `(v ~T0 @X0 1 ef1`ul ]
-{
-[e :U _configPWMFreq ]
-[v _freq `ul ~T0 @X0 1 r1 ]
-[f ]
-"168
-[; ;user.c: 168:  int timeBasePreScale;
-[v _timeBasePreScale `i ~T0 @X0 1 a ]
-"169
-[; ;user.c: 169:  long tempLong;
-[v _tempLong `l ~T0 @X0 1 a ]
-"170
-[; ;user.c: 170:  int scale;
-[v _scale `i ~T0 @X0 1 a ]
-"172
-[; ;user.c: 172:  if (freq > (20000000L/4/2)){
-[e $ ! > _freq -> / / -> 20000000 `l -> -> 4 `i `l -> -> 2 `i `l `ul 326  ]
-{
-"173
-[; ;user.c: 173:   PWMError();
-[e ( _PWMError ..  ]
-"175
-[; ;user.c: 175:  }
-}
-[e $U 327  ]
-"176
-[; ;user.c: 176:  else if (freq > (20000000L/16384)){
-[e :U 326 ]
-[e $ ! > _freq -> / -> 20000000 `l -> -> 16384 `i `l `ul 328  ]
-{
-"177
-[; ;user.c: 177:   timeBasePreScale = 1;
-[e = _timeBasePreScale -> 1 `i ]
-"178
-[; ;user.c: 178:   PTCON0 |= 0b00000000;
-[e =| _PTCON0 -> -> 0 `i `Vuc ]
-"179
-[; ;user.c: 179:  }
-}
-[e $U 329  ]
-"180
-[; ;user.c: 180:  else if (freq > (20000000L/65536)){
-[e :U 328 ]
-[e $ ! > _freq -> / -> 20000000 `l -> 65536 `l `ul 330  ]
-{
-"181
-[; ;user.c: 181:   timeBasePreScale = 4;
-[e = _timeBasePreScale -> 4 `i ]
-"182
-[; ;user.c: 182:   PTCON0 |= 0b00000100;
-[e =| _PTCON0 -> -> 4 `i `Vuc ]
-"183
-[; ;user.c: 183:  }
-}
-[e $U 331  ]
-"184
-[; ;user.c: 184:  else if (freq > (20000000L/262144)){
-[e :U 330 ]
-[e $ ! > _freq -> / -> 20000000 `l -> 262144 `l `ul 332  ]
-{
-"185
-[; ;user.c: 185:   timeBasePreScale = 16;
-[e = _timeBasePreScale -> 16 `i ]
-"186
-[; ;user.c: 186:   PTCON0 |= 0b00001000;
-[e =| _PTCON0 -> -> 8 `i `Vuc ]
-"187
-[; ;user.c: 187:  }
-}
-[e $U 333  ]
-"188
-[; ;user.c: 188:  else if (freq > (20000000L/1048576)){
-[e :U 332 ]
-[e $ ! > _freq -> / -> 20000000 `l -> 1048576 `l `ul 334  ]
-{
-"189
-[; ;user.c: 189:   timeBasePreScale = 64;
-[e = _timeBasePreScale -> 64 `i ]
-"190
-[; ;user.c: 190:   PTCON0 |= 0b00001100;
-[e =| _PTCON0 -> -> 12 `i `Vuc ]
-"191
-[; ;user.c: 191:  }
-}
-[e $U 335  ]
-"192
-[; ;user.c: 192:  else {
-[e :U 334 ]
-{
-"194
-[; ;user.c: 194:   PWMError();
-[e ( _PWMError ..  ]
-"195
-[; ;user.c: 195:  }
-}
-[e :U 335 ]
-[e :U 333 ]
-[e :U 331 ]
-[e :U 329 ]
-[e :U 327 ]
-"199
-[; ;user.c: 199:  PTCON1 = 0b10000000;
-[e = _PTCON1 -> -> 128 `i `uc ]
-"203
-[; ;user.c: 203:  scale = timeBasePreScale*4;
-[e = _scale * _timeBasePreScale -> 4 `i ]
-"204
-[; ;user.c: 204:  tempLong = (20000000L/scale);
-[e = _tempLong / -> 20000000 `l -> _scale `l ]
-"205
-[; ;user.c: 205:  tempLong = tempLong/freq;
-[e = _tempLong -> / -> _tempLong `ul _freq `l ]
-"206
-[; ;user.c: 206:  PWMPeriod= tempLong-1;
-[e = _PWMPeriod -> - _tempLong -> -> 1 `i `l `i ]
-"207
-[; ;user.c: 207:  PTPERH=PWMPeriod/256;
-[e = _PTPERH -> / _PWMPeriod -> 256 `i `uc ]
-"208
-[; ;user.c: 208:  PTPERL=PWMPeriod%256;
-[e = _PTPERL -> % _PWMPeriod -> 256 `i `uc ]
-"209
-[; ;user.c: 209: }
-[e :UE 325 ]
-}
-"211
-[; ;user.c: 211: void setPDC0(long dutyCyclePercent)
-[v _setPDC0 `(v ~T0 @X0 1 ef1`l ]
-"212
-[; ;user.c: 212: {
-{
-[e :U _setPDC0 ]
-"211
-[; ;user.c: 211: void setPDC0(long dutyCyclePercent)
-[v _dutyCyclePercent `l ~T0 @X0 1 r1 ]
-"212
-[; ;user.c: 212: {
-[f ]
-"213
-[; ;user.c: 213:     int dutyCycle = PWMPeriod*(50+100)/200;
-[v _dutyCycle `i ~T0 @X0 1 a ]
-[e = _dutyCycle / * _PWMPeriod + -> 50 `i -> 100 `i -> 200 `i ]
-"214
-[; ;user.c: 214:     int dutyCycleQC = dutyCycle*4;
-[v _dutyCycleQC `i ~T0 @X0 1 a ]
-[e = _dutyCycleQC * _dutyCycle -> 4 `i ]
-"215
-[; ;user.c: 215:     PDC0H = dutyCycleQC/256;
-[e = _PDC0H -> / _dutyCycleQC -> 256 `i `uc ]
-"216
-[; ;user.c: 216:     PDC0L = dutyCycleQC%256;
-[e = _PDC0L -> % _dutyCycleQC -> 256 `i `uc ]
-"218
-[; ;user.c: 218: }
-[e :UE 336 ]
-}
-"221
-[; ;user.c: 221: void putch(unsigned char byte) {
+"118
+[; ;user.c: 118: void putch(unsigned char byte) {
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-"222
-[; ;user.c: 222:     TXSTA = 0x26;
+"119
+[; ;user.c: 119:     TXSTA = 0x26;
 [e = _TXSTA -> -> 38 `i `uc ]
-"223
-[; ;user.c: 223:     RCSTA1bits.SPEN = 1;
+"120
+[; ;user.c: 120:     RCSTA1bits.SPEN = 1;
 [e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-"224
-[; ;user.c: 224:     while (!TXIF)continue;
-[e $U 338  ]
-[e :U 339 ]
-[e $U 338  ]
-[e :U 338 ]
-[e $ ! _TXIF 339  ]
-[e :U 340 ]
-"225
-[; ;user.c: 225:     TXREG = byte;
+"121
+[; ;user.c: 121:     while (!TXIF)continue;
+[e $U 321  ]
+[e :U 322 ]
+[e $U 321  ]
+[e :U 321 ]
+[e $ ! _TXIF 322  ]
+[e :U 323 ]
+"122
+[; ;user.c: 122:     TXREG = byte;
 [e = _TXREG _byte ]
-"226
-[; ;user.c: 226: }
-[e :UE 337 ]
+"123
+[; ;user.c: 123: }
+[e :UE 320 ]
 }
-[p f _printf 8388608 ]
-[a 1C 80 87 77 32 69 114 114 111 114 0 ]

@@ -5360,16 +5360,138 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 19 "interrupts.c" 2
-# 28 "interrupts.c"
+
+
+# 1 "./motor_pwm.h" 1
+# 16 "./motor_pwm.h"
+# 1 "./system.h" 1
+# 21 "./system.h"
+void ConfigureOscillator(void);
+# 17 "./motor_pwm.h" 2
+static int PWMPeriod;
+
+
+static void PWMError(void){
+
+ unsigned int i;
+ TRISB = 0;
+ PWMCON0 = 0;
+ printf("PWM Error");
+ while(1){
+
+  PORTBbits.RB5 = 1;
+  _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+  PORTBbits.RB5 = 0;
+  _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+ }
+}
+
+void enablePWM(char PWM_BITMASK){
+# 62 "./motor_pwm.h"
+ PWMCON0=0b11111111 & PWM_BITMASK;
+}
+
+void configPWMFreq(unsigned long freq){
+
+ int timeBasePreScale;
+ long tempLong;
+ int scale;
+
+ if (freq > (20000000L/4/2)){
+  PWMError();
+
+ }
+ else if (freq > (20000000L/16384)){
+  timeBasePreScale = 1;
+  PTCON0 |= 0b00000000;
+ }
+ else if (freq > (20000000L/65536)){
+  timeBasePreScale = 4;
+  PTCON0 |= 0b00000100;
+ }
+ else if (freq > (20000000L/262144)){
+  timeBasePreScale = 16;
+  PTCON0 |= 0b00001000;
+ }
+ else if (freq > (20000000L/1048576)){
+  timeBasePreScale = 64;
+  PTCON0 |= 0b00001100;
+ }
+ else {
+
+  PWMError();
+ }
+
+
+
+ PTCON1 = 0b10000000;
+
+
+
+ scale = timeBasePreScale*4;
+ tempLong = (20000000L/scale);
+ tempLong = tempLong/freq;
+ PWMPeriod= tempLong-1;
+ PTPERH=PWMPeriod/256;
+ PTPERL=PWMPeriod%256;
+}
+
+
+
+
+
+void setPDC0 (long dutyCyclePercent){
+ int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+ int dutyCycleQC=dutyCycle*4;
+ PDC0H=dutyCycleQC/256;
+ PDC0L=dutyCycleQC%256;
+    printf("dutycyclePrecent = %li \r\n", dutyCyclePercent);
+    printf("dutycyle = %d \r\n", dutyCycle);
+    printf("PDCOH: %d\r\n", dutyCycleQC/256);
+    printf("PDCOL: %d\r\n", dutyCycleQC%256);
+}
+
+void setPDC1 (long dutyCyclePercent){
+ int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+ int dutyCycleQC=dutyCycle*4;
+ PDC1H=dutyCycleQC/256;
+ PDC1L=dutyCycleQC%256;
+}
+
+void setPDC2 (long dutyCyclePercent){
+ int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+ int dutyCycleQC=dutyCycle*4;
+ PDC2H=dutyCycleQC/256;
+ PDC2L=dutyCycleQC%256;
+}
+
+void setPDC3 (long dutyCyclePercent){
+ int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+ int dutyCycleQC=dutyCycle*4;
+ PDC3H=dutyCycleQC/256;
+ PDC3L=dutyCycleQC%256;
+}
+# 22 "interrupts.c" 2
+
+
+
+
+
+
+
 void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
-# 37 "interrupts.c"
+# 38 "interrupts.c"
 {
-# 63 "interrupts.c"
+# 64 "interrupts.c"
     if(INTCONbits.T0IF == 1)
     {
+
+        setPDC0((long)timer0_var);
+
         timer0_var++;
-        printf("timer!\r\n");
+        printf("t: %d\r\n", timer0_var);
         TMR0 = 0;
+
 
 
 
@@ -5383,7 +5505,7 @@ void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
 
 
         }
-        else if(timer0_var == 2)
+        else if(timer0_var == 100)
         {
             timer0_var = 0;
             PORTDbits.RD7 = ~PORTDbits.RD7;
@@ -5408,5 +5530,5 @@ void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 
 
 {
-# 132 "interrupts.c"
+# 137 "interrupts.c"
 }

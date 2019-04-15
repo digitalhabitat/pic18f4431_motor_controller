@@ -6,9 +6,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./user.h
 [; ;./user.h: 15: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
-"33 main.c
-[; ;main.c: 33: void test(void);
-[v _test `(v ~T0 @X0 0 ef ]
+"19
+[; ;./user.h: 19: void enablePWM(char);
+[v _enablePWM `(v ~T0 @X0 0 ef1`uc ]
+"20
+[; ;./user.h: 20: void configPWMFreq(unsigned long freq);
+[v _configPWMFreq `(v ~T0 @X0 0 ef1`ul ]
 [v F2766 `(v ~T0 @X0 1 tf1`ul ]
 "185 /opt/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delaywdt `JF2766 ~T0 @X0 0 e ]
@@ -654,38 +657,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43
 [; ;main.c: 43:     InitApp();
 [e ( _InitApp ..  ]
-"45
-[; ;main.c: 45:     test();
-[e ( _test ..  ]
-"48
-[; ;main.c: 48:     char x;
+"46
+[; ;main.c: 46:     enablePWM(0b00101111 & 0b01111110);
+[e ( _enablePWM (1 -> & -> 47 `i -> 126 `i `uc ]
+"47
+[; ;main.c: 47:     configPWMFreq(10e3);
+[e ( _configPWMFreq (1 -> .10e3 `ul ]
+"51
+[; ;main.c: 51:     char x;
 [v _x `uc ~T0 @X0 1 a ]
-"49
-[; ;main.c: 49:     short int val;
-[v _val `s ~T0 @X0 1 a ]
-"50
-[; ;main.c: 50:     val = 96;
-[e = _val -> -> 96 `i `s ]
 "52
-[; ;main.c: 52:     while(1)
-[e :U 318 ]
+[; ;main.c: 52:     short int val;
+[v _val `s ~T0 @X0 1 a ]
 "53
-[; ;main.c: 53:     {
-{
+[; ;main.c: 53:     val = 96;
+[e = _val -> -> 96 `i `s ]
+"55
+[; ;main.c: 55:     while(1)
+[e :U 318 ]
 "56
-[; ;main.c: 56:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"57
-[; ;main.c: 57:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"58
-[; ;main.c: 58:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 56:     {
+{
 "59
 [; ;main.c: 59:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "60
 [; ;main.c: 60:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"61
+[; ;main.c: 61:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "62
 [; ;main.c: 62:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
@@ -693,98 +693,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;main.c: 63:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"64
-[; ;main.c: 64:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
-[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "65
 [; ;main.c: 65:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "66
 [; ;main.c: 66:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
 [e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"67
+[; ;main.c: 67:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"68
+[; ;main.c: 68:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "69
-[; ;main.c: 69:     }
+[; ;main.c: 69:         _delaywdt((unsigned long)((100)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"72
+[; ;main.c: 72:     }
 }
 [e :U 317 ]
 [e $U 318  ]
 [e :U 319 ]
-"71
-[; ;main.c: 71: }
+"74
+[; ;main.c: 74: }
 [e :UE 316 ]
 }
-"73
-[; ;main.c: 73: void test(void){
+"76
+[; ;main.c: 76: void test(void){
 [v _test `(v ~T0 @X0 1 ef ]
 {
 [e :U _test ]
 [f ]
-"74
-[; ;main.c: 74:     PORTA=0;
-[e = _PORTA -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
-"76
-[; ;main.c: 76:     PORTD=0;
-[e = _PORTD -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:     PORTE=0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;main.c: 77:     PORTA=0;
+[e = _PORTA -> -> 0 `i `uc ]
 "78
-[; ;main.c: 78:     TRISB=0b00000000;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 78:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
 "79
-[; ;main.c: 79:     TRISD=0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 79:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
 "80
-[; ;main.c: 80:     LATA=0b00110111;
-[e = _LATA -> -> 55 `i `uc ]
+[; ;main.c: 80:     PORTE=0;
+[e = _PORTE -> -> 0 `i `uc ]
 "81
-[; ;main.c: 81:     LATB=0b00000000;
-[e = _LATB -> -> 0 `i `uc ]
+[; ;main.c: 81:     TRISB=0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
 "82
-[; ;main.c: 82:     LATD=0b00000000;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;main.c: 82:     TRISD=0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
 "83
-[; ;main.c: 83:     LATE=0b00000011;
-[e = _LATE -> -> 3 `i `uc ]
+[; ;main.c: 83:     LATA=0b00110111;
+[e = _LATA -> -> 55 `i `uc ]
+"84
+[; ;main.c: 84:     LATB=0b00000000;
+[e = _LATB -> -> 0 `i `uc ]
 "85
-[; ;main.c: 85:     PTCON0bits.PTOPS = 0b000;
-[e = . . _PTCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 85:     LATD=0b00000000;
+[e = _LATD -> -> 0 `i `uc ]
 "86
-[; ;main.c: 86:     PTCON0bits.PTCKPS = 0b11;
-[e = . . _PTCON0bits 0 1 -> -> 3 `i `uc ]
-"87
-[; ;main.c: 87:     PTCON0bits.PTMOD = 0b00;
-[e = . . _PTCON0bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 86:     LATE=0b00000011;
+[e = _LATE -> -> 3 `i `uc ]
+"88
+[; ;main.c: 88:     PTCON0bits.PTOPS = 0b000;
+[e = . . _PTCON0bits 0 2 -> -> 0 `i `uc ]
 "89
-[; ;main.c: 89:     PTCON1bits.PTEN = 1;
-[e = . . _PTCON1bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 89:     PTCON0bits.PTCKPS = 0b11;
+[e = . . _PTCON0bits 0 1 -> -> 3 `i `uc ]
 "90
-[; ;main.c: 90:     PTCON1bits.PTDIR = 0;
-[e = . . _PTCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 90:     PTCON0bits.PTMOD = 0b00;
+[e = . . _PTCON0bits 0 0 -> -> 0 `i `uc ]
 "92
-[; ;main.c: 92:     PWMCON0bits.PWMEN = 0b010;
-[e = . . _PWMCON0bits 0 1 -> -> 2 `i `uc ]
+[; ;main.c: 92:     PTCON1bits.PTEN = 1;
+[e = . . _PTCON1bits 0 2 -> -> 1 `i `uc ]
 "93
-[; ;main.c: 93:     PWMCON0bits.PMOD = 0b1110;
-[e = . . _PWMCON0bits 0 0 -> -> 14 `i `uc ]
+[; ;main.c: 93:     PTCON1bits.PTDIR = 0;
+[e = . . _PTCON1bits 0 1 -> -> 0 `i `uc ]
+"95
+[; ;main.c: 95:     PWMCON0bits.PWMEN = 0b010;
+[e = . . _PWMCON0bits 0 1 -> -> 2 `i `uc ]
 "96
-[; ;main.c: 96:     PWMCON1=0b00000000;
+[; ;main.c: 96:     PWMCON0bits.PMOD = 0b1110;
+[e = . . _PWMCON0bits 0 0 -> -> 14 `i `uc ]
+"99
+[; ;main.c: 99:     PWMCON1=0b00000000;
 [e = _PWMCON1 -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:     PTPERH=0x01;
-[e = _PTPERH -> -> 1 `i `uc ]
-"101
-[; ;main.c: 101:     PTPERL=0x38;
-[e = _PTPERL -> -> 56 `i `uc ]
+"103
+[; ;main.c: 103:     PTPERH=0b0000;
+[e = _PTPERH -> -> 0 `i `uc ]
 "104
-[; ;main.c: 104:     PDC0H=0b00000011;
-[e = _PDC0H -> -> 3 `i `uc ]
-"105
-[; ;main.c: 105:     PDC0L=0b00110100;
-[e = _PDC0L -> -> 52 `i `uc ]
-"106
-[; ;main.c: 106: }
+[; ;main.c: 104:     PTPERL=0xFF;
+[e = _PTPERL -> -> 255 `i `uc ]
+"107
+[; ;main.c: 107:     PDC0H=0b000000;
+[e = _PDC0H -> -> 0 `i `uc ]
+"108
+[; ;main.c: 108:     PDC0L=0b0000000;
+[e = _PDC0L -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109: }
 [e :UE 320 ]
 }

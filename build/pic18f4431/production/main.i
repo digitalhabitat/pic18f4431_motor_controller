@@ -5400,7 +5400,10 @@ void main(void)
 
     InitApp();
 
-    test();
+
+    enablePWM(0b00101111 & 0b01111110);
+    configPWMFreq(10e3);
+
 
 
     char x;
@@ -5455,10 +5458,10 @@ void test(void){
 
 
 
-    PTPERH=0x01;
-    PTPERL=0x38;
+    PTPERH=0b0000;
+    PTPERL=0xFF;
 
 
-    PDC0H=0b00000011;
-    PDC0L=0b00110100;
+    PDC0H=0b000000;
+    PDC0L=0b0000000;
 }

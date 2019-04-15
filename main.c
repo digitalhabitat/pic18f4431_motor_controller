@@ -19,7 +19,7 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
-//#include "user.c"
+//#include "motor_pwm.h"
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
@@ -34,7 +34,7 @@ void test(void);
 char * dec2hex(int value);
 
 
-void main(void)
+void     main(void)
 {
     /* Configure the oscillator for the device */
     ConfigureOscillator();
@@ -42,7 +42,10 @@ void main(void)
     /* Initialize I/O and Peripherals for application */
     InitApp();
     //init_pwm();
-    test();
+    //test();
+    enablePWM(0b00101111 & 0b01111110);
+    configPWMFreq(10e3);
+            
     /* TODO <INSERT USER APPLICATION CODE HERE> */
     
     char x;
@@ -97,10 +100,10 @@ void test(void){
     
     //  PWM Period Register pair Tpwm = (PTPER+1)*PTMRPS/(0.25*Fosc)
     //  12 bit-resolution
-    PTPERH=0x01;        // 4 bits wide    
-    PTPERL=0x38;        // 8 bits wide
+    PTPERH=0b0000;        // 4 bits wide    
+    PTPERL=0xFF;        // 8 bits wide
     
     // PWM Duty Cycle 14-bit resolution 
-    PDC0H=0b00000011;   // 6 bits wide
-    PDC0L=0b00110100;   // 8 bits wide 
+    PDC0H=0b000000;   // 6 bits wide
+    PDC0L=0b0000000;   // 8 bits wide 
 }

@@ -18,6 +18,7 @@ int timer0_var=0;
 #include <stdio.h>
 #endif
 
+#include "motor_pwm.h"
 /******************************************************************************/
 /* Interrupt Routines                                                         */
 /******************************************************************************/
@@ -62,9 +63,13 @@ void high_isr(void)
 
     if(INTCONbits.T0IF == 1)
     {
+        //PDC0L = timer0_var;
+        setPDC0((long)timer0_var);
+        
         timer0_var++;
-        printf("timer!\r\n");
+        printf("t: %d\r\n", timer0_var);
         TMR0 = 0; // reload timer value
+        
         
         
         // invert the LED
@@ -78,7 +83,7 @@ void high_isr(void)
             //PORTB = 0;
             //PORTBbits.RB1 = 1;
         } 
-        else if(timer0_var == 2)
+        else if(timer0_var == 100)
         {
             timer0_var = 0;
             PORTDbits.RD7 = ~PORTDbits.RD7;

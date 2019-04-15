@@ -1,7 +1,70 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2495 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 2495: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"759
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 759: extern volatile unsigned char PWMCON0 __attribute__((address(0xF6F)));
+[v _PWMCON0 `Vuc ~T0 @X0 0 e@3951 ]
+"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"1203 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1203:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"1213
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1213:     struct {
+[s S48 :3 `uc 1 :1 `uc 1 ]
+[n S48 . . CCP2_PA2 ]
+"1202
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1202: typedef union {
+[u S46 `S47 1 `S48 1 ]
+[n S46 . . . ]
+"1218
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 1218: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS46 ~T0 @X0 0 e@3969 ]
+[v F2767 `(v ~T0 @X0 1 tf1`ul ]
+"185 /opt/microchip/xc8/v2.05/pic/include/pic18.h
+[v __delaywdt `JF2767 ~T0 @X0 0 e ]
+[p i __delaywdt ]
+"954 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 954: extern volatile unsigned char PTCON0 __attribute__((address(0xF7F)));
+[v _PTCON0 `Vuc ~T0 @X0 0 e@3967 ]
+"927
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 927: extern volatile unsigned char PTCON1 __attribute__((address(0xF7E)));
+[v _PTCON1 `Vuc ~T0 @X0 0 e@3966 ]
+"899
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 899: extern volatile unsigned char PTPERH __attribute__((address(0xF7A)));
+[v _PTPERH `Vuc ~T0 @X0 0 e@3962 ]
+"906
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 906: extern volatile unsigned char PTPERL __attribute__((address(0xF7B)));
+[v _PTPERL `Vuc ~T0 @X0 0 e@3963 ]
+"885
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 885: extern volatile unsigned char PDC0H __attribute__((address(0xF78)));
+[v _PDC0H `Vuc ~T0 @X0 0 e@3960 ]
+"892
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 892: extern volatile unsigned char PDC0L __attribute__((address(0xF79)));
+[v _PDC0L `Vuc ~T0 @X0 0 e@3961 ]
+"871
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 871: extern volatile unsigned char PDC1H __attribute__((address(0xF76)));
+[v _PDC1H `Vuc ~T0 @X0 0 e@3958 ]
+"878
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 878: extern volatile unsigned char PDC1L __attribute__((address(0xF77)));
+[v _PDC1L `Vuc ~T0 @X0 0 e@3959 ]
+"857
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 857: extern volatile unsigned char PDC2H __attribute__((address(0xF74)));
+[v _PDC2H `Vuc ~T0 @X0 0 e@3956 ]
+"864
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 864: extern volatile unsigned char PDC2L __attribute__((address(0xF75)));
+[v _PDC2L `Vuc ~T0 @X0 0 e@3957 ]
+"843
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 843: extern volatile unsigned char PDC3H __attribute__((address(0xF72)));
+[v _PDC3H `Vuc ~T0 @X0 0 e@3954 ]
+"850
+[; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 850: extern volatile unsigned char PDC3L __attribute__((address(0xF73)));
+[v _PDC3L `Vuc ~T0 @X0 0 e@3955 ]
 [t ~ __interrupt . k ]
 [t T36 __interrupt high_priority ]
-"7313 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+"7313
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7313:     struct {
 [s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S308 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -20,9 +83,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7339
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7339: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS307 ~T0 @X0 0 e@4082 ]
-"113 /opt/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"6864 /opt/microchip/xc8/v2.05/pic/include/pic18f4431.h
+"6864
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 6864: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
 [v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
 "1540
@@ -587,93 +648,401 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7616
 [; ;/opt/microchip/xc8/v2.05/pic/include/pic18f4431.h: 7616: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"17 ./motor_pwm.h
+[; ;./motor_pwm.h: 17: static int PWMPeriod;
+[v _PWMPeriod `i ~T0 @X0 1 s ]
+"20
+[; ;./motor_pwm.h: 20: static void PWMError(void){
+[v _PWMError `(v ~T0 @X0 1 sf ]
+{
+[e :U _PWMError ]
+[f ]
+"22
+[; ;./motor_pwm.h: 22:  unsigned int i;
+[v _i `ui ~T0 @X0 1 a ]
+"23
+[; ;./motor_pwm.h: 23:  TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"24
+[; ;./motor_pwm.h: 24:  PWMCON0 = 0;
+[e = _PWMCON0 -> -> 0 `i `uc ]
+"25
+[; ;./motor_pwm.h: 25:  printf("PWM Error");
+[e ( _printf :s 1C ]
+"26
+[; ;./motor_pwm.h: 26:  while(1){
+[e :U 318 ]
+{
+"28
+[; ;./motor_pwm.h: 28:   PORTBbits.RB5 = 1;
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+"29
+[; ;./motor_pwm.h: 29:   _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> / -> 20000000 `l -> -> 5000 `i `l `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"30
+[; ;./motor_pwm.h: 30:   PORTBbits.RB5 = 0;
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+"31
+[; ;./motor_pwm.h: 31:   _delaywdt((unsigned long)((20000000L/5000)*(20000000L/4000.0)));
+[e ( __delaywdt (1 -> * -> / -> 20000000 `l -> -> 5000 `i `l `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"32
+[; ;./motor_pwm.h: 32:  }
+}
+[e :U 317 ]
+[e $U 318  ]
+[e :U 319 ]
+"33
+[; ;./motor_pwm.h: 33: }
+[e :UE 316 ]
+}
+"35
+[; ;./motor_pwm.h: 35: void enablePWM(char PWM_BITMASK){
+[v _enablePWM `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _enablePWM ]
+[v _PWM_BITMASK `uc ~T0 @X0 1 r1 ]
+[f ]
+"62
+[; ;./motor_pwm.h: 62:  PWMCON0=0b11111111 & PWM_BITMASK;
+[e = _PWMCON0 -> & -> 255 `i -> _PWM_BITMASK `i `uc ]
+"63
+[; ;./motor_pwm.h: 63: }
+[e :UE 320 ]
+}
+"65
+[; ;./motor_pwm.h: 65: void configPWMFreq(unsigned long freq){
+[v _configPWMFreq `(v ~T0 @X0 1 ef1`ul ]
+{
+[e :U _configPWMFreq ]
+[v _freq `ul ~T0 @X0 1 r1 ]
+[f ]
+"67
+[; ;./motor_pwm.h: 67:  int timeBasePreScale;
+[v _timeBasePreScale `i ~T0 @X0 1 a ]
+"68
+[; ;./motor_pwm.h: 68:  long tempLong;
+[v _tempLong `l ~T0 @X0 1 a ]
+"69
+[; ;./motor_pwm.h: 69:  int scale;
+[v _scale `i ~T0 @X0 1 a ]
+"71
+[; ;./motor_pwm.h: 71:  if (freq > (20000000L/4/2)){
+[e $ ! > _freq -> / / -> 20000000 `l -> -> 4 `i `l -> -> 2 `i `l `ul 322  ]
+{
+"72
+[; ;./motor_pwm.h: 72:   PWMError();
+[e ( _PWMError ..  ]
+"74
+[; ;./motor_pwm.h: 74:  }
+}
+[e $U 323  ]
+"75
+[; ;./motor_pwm.h: 75:  else if (freq > (20000000L/16384)){
+[e :U 322 ]
+[e $ ! > _freq -> / -> 20000000 `l -> -> 16384 `i `l `ul 324  ]
+{
+"76
+[; ;./motor_pwm.h: 76:   timeBasePreScale = 1;
+[e = _timeBasePreScale -> 1 `i ]
+"77
+[; ;./motor_pwm.h: 77:   PTCON0 |= 0b00000000;
+[e =| _PTCON0 -> -> 0 `i `Vuc ]
+"78
+[; ;./motor_pwm.h: 78:  }
+}
+[e $U 325  ]
+"79
+[; ;./motor_pwm.h: 79:  else if (freq > (20000000L/65536)){
+[e :U 324 ]
+[e $ ! > _freq -> / -> 20000000 `l -> 65536 `l `ul 326  ]
+{
+"80
+[; ;./motor_pwm.h: 80:   timeBasePreScale = 4;
+[e = _timeBasePreScale -> 4 `i ]
+"81
+[; ;./motor_pwm.h: 81:   PTCON0 |= 0b00000100;
+[e =| _PTCON0 -> -> 4 `i `Vuc ]
+"82
+[; ;./motor_pwm.h: 82:  }
+}
+[e $U 327  ]
+"83
+[; ;./motor_pwm.h: 83:  else if (freq > (20000000L/262144)){
+[e :U 326 ]
+[e $ ! > _freq -> / -> 20000000 `l -> 262144 `l `ul 328  ]
+{
+"84
+[; ;./motor_pwm.h: 84:   timeBasePreScale = 16;
+[e = _timeBasePreScale -> 16 `i ]
+"85
+[; ;./motor_pwm.h: 85:   PTCON0 |= 0b00001000;
+[e =| _PTCON0 -> -> 8 `i `Vuc ]
+"86
+[; ;./motor_pwm.h: 86:  }
+}
+[e $U 329  ]
+"87
+[; ;./motor_pwm.h: 87:  else if (freq > (20000000L/1048576)){
+[e :U 328 ]
+[e $ ! > _freq -> / -> 20000000 `l -> 1048576 `l `ul 330  ]
+{
+"88
+[; ;./motor_pwm.h: 88:   timeBasePreScale = 64;
+[e = _timeBasePreScale -> 64 `i ]
+"89
+[; ;./motor_pwm.h: 89:   PTCON0 |= 0b00001100;
+[e =| _PTCON0 -> -> 12 `i `Vuc ]
+"90
+[; ;./motor_pwm.h: 90:  }
+}
+[e $U 331  ]
+"91
+[; ;./motor_pwm.h: 91:  else {
+[e :U 330 ]
+{
+"93
+[; ;./motor_pwm.h: 93:   PWMError();
+[e ( _PWMError ..  ]
+"94
+[; ;./motor_pwm.h: 94:  }
+}
+[e :U 331 ]
+[e :U 329 ]
+[e :U 327 ]
+[e :U 325 ]
+[e :U 323 ]
+"98
+[; ;./motor_pwm.h: 98:  PTCON1 = 0b10000000;
+[e = _PTCON1 -> -> 128 `i `uc ]
+"102
+[; ;./motor_pwm.h: 102:  scale = timeBasePreScale*4;
+[e = _scale * _timeBasePreScale -> 4 `i ]
+"103
+[; ;./motor_pwm.h: 103:  tempLong = (20000000L/scale);
+[e = _tempLong / -> 20000000 `l -> _scale `l ]
+"104
+[; ;./motor_pwm.h: 104:  tempLong = tempLong/freq;
+[e = _tempLong -> / -> _tempLong `ul _freq `l ]
+"105
+[; ;./motor_pwm.h: 105:  PWMPeriod= tempLong-1;
+[e = _PWMPeriod -> - _tempLong -> -> 1 `i `l `i ]
+"106
+[; ;./motor_pwm.h: 106:  PTPERH=PWMPeriod/256;
+[e = _PTPERH -> / _PWMPeriod -> 256 `i `uc ]
+"107
+[; ;./motor_pwm.h: 107:  PTPERL=PWMPeriod%256;
+[e = _PTPERL -> % _PWMPeriod -> 256 `i `uc ]
+"108
+[; ;./motor_pwm.h: 108: }
+[e :UE 321 ]
+}
+"114
+[; ;./motor_pwm.h: 114: void setPDC0 (long dutyCyclePercent){
+[v _setPDC0 `(v ~T0 @X0 1 ef1`l ]
+{
+[e :U _setPDC0 ]
+[v _dutyCyclePercent `l ~T0 @X0 1 r1 ]
+[f ]
+"115
+[; ;./motor_pwm.h: 115:  int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+[v _dutyCycle `i ~T0 @X0 1 a ]
+[e = _dutyCycle -> / * -> _PWMPeriod `l + _dutyCyclePercent -> -> 100 `i `l -> -> 200 `i `l `i ]
+"116
+[; ;./motor_pwm.h: 116:  int dutyCycleQC=dutyCycle*4;
+[v _dutyCycleQC `i ~T0 @X0 1 a ]
+[e = _dutyCycleQC * _dutyCycle -> 4 `i ]
+"117
+[; ;./motor_pwm.h: 117:  PDC0H=dutyCycleQC/256;
+[e = _PDC0H -> / _dutyCycleQC -> 256 `i `uc ]
+"118
+[; ;./motor_pwm.h: 118:  PDC0L=dutyCycleQC%256;
+[e = _PDC0L -> % _dutyCycleQC -> 256 `i `uc ]
+"119
+[; ;./motor_pwm.h: 119:     printf("dutycyclePrecent = %li \r\n", dutyCyclePercent);
+[e ( _printf , (. :s 2C _dutyCyclePercent ]
+"120
+[; ;./motor_pwm.h: 120:     printf("dutycyle = %d \r\n", dutyCycle);
+[e ( _printf , (. :s 3C _dutyCycle ]
+"121
+[; ;./motor_pwm.h: 121:     printf("PDCOH: %d\r\n", dutyCycleQC/256);
+[e ( _printf , (. :s 4C / _dutyCycleQC -> 256 `i ]
+"122
+[; ;./motor_pwm.h: 122:     printf("PDCOL: %d\r\n", dutyCycleQC%256);
+[e ( _printf , (. :s 5C % _dutyCycleQC -> 256 `i ]
+"123
+[; ;./motor_pwm.h: 123: }
+[e :UE 332 ]
+}
+"125
+[; ;./motor_pwm.h: 125: void setPDC1 (long dutyCyclePercent){
+[v _setPDC1 `(v ~T0 @X0 1 ef1`l ]
+{
+[e :U _setPDC1 ]
+[v _dutyCyclePercent `l ~T0 @X0 1 r1 ]
+[f ]
+"126
+[; ;./motor_pwm.h: 126:  int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+[v _dutyCycle `i ~T0 @X0 1 a ]
+[e = _dutyCycle -> / * -> _PWMPeriod `l + _dutyCyclePercent -> -> 100 `i `l -> -> 200 `i `l `i ]
+"127
+[; ;./motor_pwm.h: 127:  int dutyCycleQC=dutyCycle*4;
+[v _dutyCycleQC `i ~T0 @X0 1 a ]
+[e = _dutyCycleQC * _dutyCycle -> 4 `i ]
+"128
+[; ;./motor_pwm.h: 128:  PDC1H=dutyCycleQC/256;
+[e = _PDC1H -> / _dutyCycleQC -> 256 `i `uc ]
+"129
+[; ;./motor_pwm.h: 129:  PDC1L=dutyCycleQC%256;
+[e = _PDC1L -> % _dutyCycleQC -> 256 `i `uc ]
+"130
+[; ;./motor_pwm.h: 130: }
+[e :UE 333 ]
+}
+"132
+[; ;./motor_pwm.h: 132: void setPDC2 (long dutyCyclePercent){
+[v _setPDC2 `(v ~T0 @X0 1 ef1`l ]
+{
+[e :U _setPDC2 ]
+[v _dutyCyclePercent `l ~T0 @X0 1 r1 ]
+[f ]
+"133
+[; ;./motor_pwm.h: 133:  int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+[v _dutyCycle `i ~T0 @X0 1 a ]
+[e = _dutyCycle -> / * -> _PWMPeriod `l + _dutyCyclePercent -> -> 100 `i `l -> -> 200 `i `l `i ]
+"134
+[; ;./motor_pwm.h: 134:  int dutyCycleQC=dutyCycle*4;
+[v _dutyCycleQC `i ~T0 @X0 1 a ]
+[e = _dutyCycleQC * _dutyCycle -> 4 `i ]
+"135
+[; ;./motor_pwm.h: 135:  PDC2H=dutyCycleQC/256;
+[e = _PDC2H -> / _dutyCycleQC -> 256 `i `uc ]
+"136
+[; ;./motor_pwm.h: 136:  PDC2L=dutyCycleQC%256;
+[e = _PDC2L -> % _dutyCycleQC -> 256 `i `uc ]
+"137
+[; ;./motor_pwm.h: 137: }
+[e :UE 334 ]
+}
+"139
+[; ;./motor_pwm.h: 139: void setPDC3 (long dutyCyclePercent){
+[v _setPDC3 `(v ~T0 @X0 1 ef1`l ]
+{
+[e :U _setPDC3 ]
+[v _dutyCyclePercent `l ~T0 @X0 1 r1 ]
+[f ]
+"140
+[; ;./motor_pwm.h: 140:  int dutyCycle = PWMPeriod*(dutyCyclePercent+100)/200;
+[v _dutyCycle `i ~T0 @X0 1 a ]
+[e = _dutyCycle -> / * -> _PWMPeriod `l + _dutyCyclePercent -> -> 100 `i `l -> -> 200 `i `l `i ]
+"141
+[; ;./motor_pwm.h: 141:  int dutyCycleQC=dutyCycle*4;
+[v _dutyCycleQC `i ~T0 @X0 1 a ]
+[e = _dutyCycleQC * _dutyCycle -> 4 `i ]
+"142
+[; ;./motor_pwm.h: 142:  PDC3H=dutyCycleQC/256;
+[e = _PDC3H -> / _dutyCycleQC -> 256 `i `uc ]
+"143
+[; ;./motor_pwm.h: 143:  PDC3L=dutyCycleQC%256;
+[e = _PDC3L -> % _dutyCycleQC -> 256 `i `uc ]
+"144
+[; ;./motor_pwm.h: 144: }
+[e :UE 335 ]
+}
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-"28 interrupts.c
-[; ;interrupts.c: 28: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
+"29 interrupts.c
+[; ;interrupts.c: 29: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
 [v _high_isr `(v ~T36 @X0 1 ef ]
-"37
-[; ;interrupts.c: 37: {
+"38
+[; ;interrupts.c: 38: {
 {
 [e :U _high_isr ]
 [f ]
-"63
-[; ;interrupts.c: 63:     if(INTCONbits.T0IF == 1)
-[e $ ! == -> . . _INTCONbits 1 2 `i -> 1 `i 317  ]
 "64
-[; ;interrupts.c: 64:     {
-{
+[; ;interrupts.c: 64:     if(INTCONbits.T0IF == 1)
+[e $ ! == -> . . _INTCONbits 1 2 `i -> 1 `i 337  ]
 "65
-[; ;interrupts.c: 65:         timer0_var++;
-[e ++ _timer0_var -> 1 `i ]
-"66
-[; ;interrupts.c: 66:         printf("timer!\r\n");
-[e ( _printf :s 1C ]
-"67
-[; ;interrupts.c: 67:         TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
-"71
-[; ;interrupts.c: 71:         if (timer0_var == 0)
-[e $ ! == _timer0_var -> 0 `i 318  ]
-"72
-[; ;interrupts.c: 72:         {
+[; ;interrupts.c: 65:     {
 {
-"75
-[; ;interrupts.c: 75:         }
-}
-[e $U 319  ]
+"67
+[; ;interrupts.c: 67:         setPDC0((long)timer0_var);
+[e ( _setPDC0 (1 -> _timer0_var `l ]
+"69
+[; ;interrupts.c: 69:         timer0_var++;
+[e ++ _timer0_var -> 1 `i ]
+"70
+[; ;interrupts.c: 70:         printf("t: %d\r\n", timer0_var);
+[e ( _printf , (. :s 6C _timer0_var ]
+"71
+[; ;interrupts.c: 71:         TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
 "76
-[; ;interrupts.c: 76:         else if(timer0_var == 1)
-[e :U 318 ]
-[e $ ! == _timer0_var -> 1 `i 320  ]
+[; ;interrupts.c: 76:         if (timer0_var == 0)
+[e $ ! == _timer0_var -> 0 `i 338  ]
 "77
 [; ;interrupts.c: 77:         {
 {
 "80
 [; ;interrupts.c: 80:         }
 }
-[e $U 321  ]
+[e $U 339  ]
 "81
-[; ;interrupts.c: 81:         else if(timer0_var == 2)
-[e :U 320 ]
-[e $ ! == _timer0_var -> 2 `i 322  ]
+[; ;interrupts.c: 81:         else if(timer0_var == 1)
+[e :U 338 ]
+[e $ ! == _timer0_var -> 1 `i 340  ]
 "82
 [; ;interrupts.c: 82:         {
 {
-"83
-[; ;interrupts.c: 83:             timer0_var = 0;
-[e = _timer0_var -> 0 `i ]
-"84
-[; ;interrupts.c: 84:             PORTDbits.RD7 = ~PORTDbits.RD7;
-[e = . . _PORTDbits 0 7 -> ~ -> . . _PORTDbits 0 7 `i `uc ]
 "85
 [; ;interrupts.c: 85:         }
 }
-[e :U 322 ]
-[e :U 321 ]
-[e :U 319 ]
+[e $U 341  ]
+"86
+[; ;interrupts.c: 86:         else if(timer0_var == 100)
+[e :U 340 ]
+[e $ ! == _timer0_var -> 100 `i 342  ]
+"87
+[; ;interrupts.c: 87:         {
+{
+"88
+[; ;interrupts.c: 88:             timer0_var = 0;
+[e = _timer0_var -> 0 `i ]
 "89
-[; ;interrupts.c: 89:         INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+[; ;interrupts.c: 89:             PORTDbits.RD7 = ~PORTDbits.RD7;
+[e = . . _PORTDbits 0 7 -> ~ -> . . _PORTDbits 0 7 `i `uc ]
 "90
-[; ;interrupts.c: 90:       }
+[; ;interrupts.c: 90:         }
 }
-[e :U 317 ]
-"93
-[; ;interrupts.c: 93: }
-[e :UE 316 ]
+[e :U 342 ]
+[e :U 341 ]
+[e :U 339 ]
+"94
+[; ;interrupts.c: 94:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"95
+[; ;interrupts.c: 95:       }
+}
+[e :U 337 ]
+"98
+[; ;interrupts.c: 98: }
+[e :UE 336 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
-"97
-[; ;interrupts.c: 97: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
+"102
+[; ;interrupts.c: 102: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 [v _low_isr `(v ~T37 @X0 1 ef ]
-"105
-[; ;interrupts.c: 105: {
+"110
+[; ;interrupts.c: 110: {
 {
 [e :U _low_isr ]
 [f ]
-"132
-[; ;interrupts.c: 132: }
-[e :UE 323 ]
+"137
+[; ;interrupts.c: 137: }
+[e :UE 343 ]
 }
-[p f _printf 8388608 ]
-[a 1C 116 105 109 101 114 33 13 10 0 ]
+[p f _printf 8388752 ]
+[a 1C 80 87 77 32 69 114 114 111 114 0 ]
+[a 6C 116 58 32 37 100 13 10 0 ]
+[a 5C 80 68 67 79 76 58 32 37 100 13 10 0 ]
+[a 4C 80 68 67 79 72 58 32 37 100 13 10 0 ]
+[a 2C 100 117 116 121 99 121 99 108 101 80 114 101 99 101 110 116 32 61 32 37 108 105 32 13 10 0 ]
+[a 3C 100 117 116 121 99 121 108 101 32 61 32 37 100 32 13 10 0 ]
