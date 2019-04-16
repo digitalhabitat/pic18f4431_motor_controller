@@ -20,6 +20,7 @@
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
 //#include "motor_pwm.h"
+//#include "qei.h"
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
@@ -41,69 +42,15 @@ void     main(void)
 
     /* Initialize I/O and Peripherals for application */
     InitApp();
-    //init_pwm();
-    //test();
-    enablePWM(0b00101111 & 0b01111110);
-    configPWMFreq(10e3);
-            
-    /* TODO <INSERT USER APPLICATION CODE HERE> */
+    initQEI(4);
+    enablePWM(0b00101111 );
+    configPWMFreq(5e4);
     
-    char x;
-    short int val;
-    val = 96;
+    // Motor Controller Accepts Commands Through USART Terminal
     
     while(1)
     {
-
-       // PORTBbits.RB0 = 1;s
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-       /// PORTBbits.RB0 = 0;
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-       //T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
-       // */
+       // Wait for interrupts 
     }
 
-}
-
-void test(void){
-    PORTA=0;        
-    PORTB=0;   
-    PORTD=0;       
-    PORTE=0;    
-    TRISB=0b00000000;     
-    TRISD=0b00000000;   
-    LATA=0b00110111; 
-    LATB=0b00000000; 
-    LATD=0b00000000; 
-    LATE=0b00000011; 
-    
-    PTCON0bits.PTOPS = 0b000;   // 1:1 PWM Time Base Output Postscale
-    PTCON0bits.PTCKPS = 0b11;   // PWM time Fosc/256 (1:64 presale)
-    PTCON0bits.PTMOD = 0b00;    // PWM time base operates in a Free-Running mode    
-    
-    PTCON1bits.PTEN = 1;        // PWM time base Timer is on
-    PTCON1bits.PTDIR = 0;       // PWM time base counts up    
-    
-    PWMCON0bits.PWMEN = 0b010;  // PWM0 and PWM1 pins are enabled for PWM output
-    PWMCON0bits.PMOD  = 0b1110; // (PWM0, PWM1) is in Complementary mode
-    
-    //PWMCON1bits.UDIS = 1;       //
-    PWMCON1=0b00000000;      
-    
-    //  PWM Period Register pair Tpwm = (PTPER+1)*PTMRPS/(0.25*Fosc)
-    //  12 bit-resolution
-    PTPERH=0b0000;        // 4 bits wide    
-    PTPERL=0xFF;        // 8 bits wide
-    
-    // PWM Duty Cycle 14-bit resolution 
-    PDC0H=0b000000;   // 6 bits wide
-    PDC0L=0b0000000;   // 8 bits wide 
 }

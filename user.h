@@ -19,6 +19,7 @@ void init_pwm(void);        /* PWM Initialization */
 void enablePWM(char);
 void configPWMFreq(unsigned long freq);
 void setPDC0(long dutyCyclePercent);
-//test
-
+void initQEI(int mode);
+unsigned int getQEIPos(void);
+void setQEIPos(unsigned int pos);
 

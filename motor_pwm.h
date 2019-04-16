@@ -1,8 +1,8 @@
 /* 
  * File:   motor_pwm.h
- * Author: mike
  *
  * Created on April 14, 2019, 4:17 PM
+ * Source: http://hades.mech.northwestern.edu/index.php/PIC_Motor_Control_and_Serial_Port_Example#Project_Files
  */
 
 #ifndef MOTOR_PWM_H
@@ -15,6 +15,7 @@ extern "C" {
 #include <stdio.h>
 #include "system.h"
 static int PWMPeriod; //PTMR will count until this value
+
 
 
 static void PWMError(void){
@@ -116,10 +117,10 @@ void setPDC0 (long dutyCyclePercent){
 	int dutyCycleQC=dutyCycle*4;
 	PDC0H=dutyCycleQC/256;
 	PDC0L=dutyCycleQC%256;
-    printf("dutycyclePrecent = %li \r\n", dutyCyclePercent);
-    printf("dutycyle = %d \r\n", dutyCycle);
-    printf("PDCOH: %d\r\n", dutyCycleQC/256);
-    printf("PDCOL: %d\r\n", dutyCycleQC%256);
+    //printf("dutycyclePrecent = %li \r\n", dutyCyclePercent);
+    //printf("dutycyle = %d \r\n", dutyCycle);
+    //printf("PDCOH: %d\r\n", dutyCycleQC/256);
+    //printf("PDCOL: %d\r\n", dutyCycleQC%256);
 }
 
 void setPDC1 (long dutyCyclePercent){
@@ -141,7 +142,16 @@ void setPDC3 (long dutyCyclePercent){
 	int dutyCycleQC=dutyCycle*4;
 	PDC3H=dutyCycleQC/256;
 	PDC3L=dutyCycleQC%256;
-}    
+}
+
+void printmsg(void)
+{
+    printf("***********************\r\n");
+    printf("-----MOTOR CONTROL-----\r\n");
+    printf("keys 0-9 adjust PWM    \r\n");
+    printf("key a    print encoder \r\n");
+    printf("***********************\r\n");           
+}
 
 
 

@@ -17,10 +17,14 @@
 #include <stdlib.h>
 #include <stdbool.h>        /* For true/false definition */
 
+
 #endif
 
 #include "user.h"
 #include "system.h"
+
+
+
 
 /******************************************************************************/
 /* User Functions                                                             */
@@ -35,6 +39,8 @@ void InitApp(void)
     /* Setup analog functionality and port direction */
     TRISDbits.RD7 = 0; // enable port B bit 0 as output
     TRISDbits.RD6 = 0;
+    TRISDbits.RD5 = 0;
+    TRISBbits.RB5 = 0;
     
     /* Initialize peripherals */
     init_usart();
@@ -48,14 +54,14 @@ void InitApp(void)
 void init_usart(void)
 {
       // Setup UART
-    TRISCbits.RC6 = 0;   // TX as output
+    TRISCbits.RC6 = 1;   // TX as output
     TRISCbits.RC7 = 1;   // RX as input
     
     TXSTA1bits.SYNC = 0;    // Async operation
-    TXSTA1bits.TX9 = 0;     // No tx of 9th bit
+    TXSTA1bits.TX9 = 0;     // 8 bit reception
     TXSTA1bits.TXEN = 1;    // Enable transmitter
     
-    RCSTA1bits.RX9 = 0;     // No rx of 9th bit
+    RCSTA1bits.RX9 = 0;     // 8 bit transmission
     RCSTA1bits.CREN = 1;    // Enable receiver
     RCSTA1bits.SPEN = 1;    // Enable serial port
     
@@ -63,7 +69,10 @@ void init_usart(void)
     BAUDCONbits.BRG16 = 0;  // Divisor at 8 bit
     TXSTA1bits.BRGH = 0;    // No high-speed baudrate
     SPBRG1 = 129;           // divisor for 9600 baud with 20MHz FOSC (TABLE 20-3:)
-    
+        
+    SPBRG = 129;          //calculated
+    SPBRGH = 0; 
+
     // enable USART Interrupt
     // PIE1bits.TXIE = 1;
     // INTCONbits.GIE = 1;
@@ -74,10 +83,27 @@ void init_timer(void)
 {
     
     T0CONbits.TMR0ON = 0; // stop the timer
+    
+    #if 0
     T0CONbits.T016BIT = 0; // timer configured as 16-bit
-    T0CONbits.T0CS = 0; // use internal clock
-    T0CONbits.PSA = 0; // use prescaler
-    T0CONbits.T0PS = 0b011; // 1:256 prescale value
+    #else
+    T0CONbits.T016BIT = 1; // timer configured as 8-bit
+    #endif
+    
+    #if 1
+    T0CONbits.T0CS = 0; // Internal clock (FOSC/4)
+    #else 
+    T0CONbits.T0CS = 1; // Transition on T0CKI pin input edge
+    #endif
+    
+    #if 1
+    T0CONbits.PSA = 0; // use prescaler if defined
+    #else
+    T0CONbits.PSA = 1; // don't use prescaler
+    #endif
+
+    T0CONbits.T0PS = 0b111; // 1:256 prescale value
+    
     TMR0 = 0; // setup initial timer value 
     INTCONbits.T0IF = 0; // reset timer interrupt flag
     INTCONbits.T0IE = 1; // enable timer interrupts
@@ -85,7 +111,8 @@ void init_timer(void)
     INTCONbits.PEIE = 1; // enable peripheral interrupts
     INTCONbits.GIE = 1; // enable interrupts globally
     T0CONbits.TMR0ON = 1;
-
+    
+    
 
 }
 
@@ -111,7 +138,10 @@ void init_pwm(void)
     
     // PWM Duty Cycle 14-bit resolution 
     PDC0H=0b00000011;   // 6 bits wide
-    PDC0L=0b00110100;   // 8 bits wide 
+    PDC0L=0b00110100;   // 8 bits wide
+    
+    PORTDbits.RD6 = 1;
+    PORTDbits.RD5 = 0;
 }
 
 
@@ -121,6 +151,44 @@ void putch(unsigned char byte) {
     while (!TXIF)continue;
     TXREG = byte; /* transmit a character to Serial IO */
 }
+
+union UINT_UCHAR{
+		unsigned int intCount;
+		unsigned char charCount[2];
+};    
+
+void initQEI(int mode){//input 2x or 4x, default 2x
+	ANSEL0bits.ANS3 = 0;
+	ANSEL0bits.ANS4 = 0;
+	TRISA |= 0b00011000;
+	if (mode == 4){
+		QEICON = 0b10111000;
+	}
+	else{
+		QEICON = 0b10101000;
+	}
+	POSCNTH = 0;
+	POSCNTL = 0;
+	MAXCNTH = 0xFF;
+	MAXCNTL = 0xFF;
+}
+
+unsigned int getQEIPos(void){
+	union UINT_UCHAR qeiPos;
+	
+	qeiPos.charCount[0] = POSCNTL;
+	qeiPos.charCount[1] = POSCNTH;
+	
+	return qeiPos.intCount;
+}
+
+void setQEIPos(unsigned int pos){
+	union UINT_UCHAR qeiPos;
+	qeiPos.intCount = pos;
+	POSCNTH = qeiPos.charCount[1];
+	POSCNTL = qeiPos.charCount[0];
+}
+
 
 
 
