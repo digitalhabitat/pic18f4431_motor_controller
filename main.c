@@ -1,4 +1,4 @@
-/******************************************************************************/
+    /******************************************************************************/
 /* Files to Include                                                           */
 /******************************************************************************/
 
@@ -19,7 +19,8 @@
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
-
+//#include "motor_pwm.h"
+//#include "qei.h"
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
@@ -38,32 +39,15 @@ void main(void)
 
     /* Initialize I/O and Peripherals for application */
     InitApp();
-
-    /* TODO <INSERT USER APPLICATION CODE HERE> */
+    initQEI(4);
+    enablePWM(0b00101111); // enable pwm 1 and 0
+    configPWMFreq(25000);
     
-    char x;
-    int val;
-    val = 96;
+    // Motor Controller Accepts Commands Through USART Terminal
     
     while(1)
     {
-
-        printf("timer: %x\r\n", TMR0);
-       /* PORTBbits.RB0 = 1;
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        PORTBbits.RB0 = 0;
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-        __delaywdt_ms(100);
-       T0CONbits.TMR0ON = !T0CONbits.TMR0ON;
-        */
+       // Wait for interrupts 
     }
 
 }
-
