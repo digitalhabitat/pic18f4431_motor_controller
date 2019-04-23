@@ -189,6 +189,16 @@ void setQEIPos(unsigned int pos){
 	POSCNTL = qeiPos.charCount[0];
 }
 
-
+void printmsg(void)
+{
+    printf("\r\n");
+    printf("                        ******************************\r\n");
+    printf("                        **-------MOTOR CONTROL------**\r\n");
+    printf("                        ** keys 0-9 adjust PWM      **\r\n");
+    printf("                        ** key a    print encoder   **\r\n");
+    printf("                        ** key <colon>  stop motor  **\r\n");
+    printf("                        ******************************\r\n");
+    printf("\033[10A"); // move up 10 lines
+}
 
 

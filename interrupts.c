@@ -85,7 +85,7 @@ void high_isr(void)
         if (data_rcv >= 48 && data_rcv <= 58 )
         {
             mode = 1;
-            printf("\033[8A"); // move up 5 lines
+            
             printf("\033[2J"); // Clear screen
             printf("character received: %c\r\n",data_rcv);
             DutyCycle = (data_rcv - '0')*10;
@@ -97,7 +97,6 @@ void high_isr(void)
         else if (data_rcv == 'a')
         {
             
-            printf("\033[8A"); // move up 5 lines
             printf("\033[2J"); // Clear screen
             qei_var = getQEIPos(); 
             printf("Encoder Count %x\r\n", qei_var);
@@ -106,7 +105,6 @@ void high_isr(void)
         /// TOGGlE REQUEST
         else if (data_rcv == 'b')
         {
-            printf("\033[8A"); // move up 5 lines
             printf("\033[2J"); // Clear screen
             PORTDbits.RD6 = ~PORTDbits.RD6;
             PORTDbits.RD5 = ~PORTDbits.RD5;
@@ -116,7 +114,6 @@ void high_isr(void)
         }  
         else
         {
-            printf("\033[8A"); // move up 8 lines
             printf("\033[2J"); // Clear screen
             printf("character received: %c\r\n",data_rcv);
             printf("No action assigned for is character \r\n");

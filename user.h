@@ -22,4 +22,4 @@ void setPDC0(long dutyCyclePercent);
 void initQEI(int mode);
 unsigned int getQEIPos(void);
 void setQEIPos(unsigned int pos);
-
+void printmsg(void);

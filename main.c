@@ -1,4 +1,4 @@
-/******************************************************************************/
+    /******************************************************************************/
 /* Files to Include                                                           */
 /******************************************************************************/
 
@@ -31,11 +31,8 @@
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
-void test(void);
-char * dec2hex(int value);
 
-
-void     main(void)
+void main(void)
 {
     /* Configure the oscillator for the device */
     ConfigureOscillator();
@@ -43,8 +40,8 @@ void     main(void)
     /* Initialize I/O and Peripherals for application */
     InitApp();
     initQEI(4);
-    enablePWM(0b00101111 );
-    configPWMFreq(5e4);
+    enablePWM(0b00101111); // enable pwm 1 and 0
+    configPWMFreq(25000);
     
     // Motor Controller Accepts Commands Through USART Terminal
     

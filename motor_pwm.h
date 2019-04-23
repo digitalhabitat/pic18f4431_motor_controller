@@ -117,10 +117,6 @@ void setPDC0 (long dutyCyclePercent){
 	int dutyCycleQC=dutyCycle*4;
 	PDC0H=dutyCycleQC/256;
 	PDC0L=dutyCycleQC%256;
-    //printf("dutycyclePrecent = %li \r\n", dutyCyclePercent);
-    //printf("dutycyle = %d \r\n", dutyCycle);
-    //printf("PDCOH: %d\r\n", dutyCycleQC/256);
-    //printf("PDCOL: %d\r\n", dutyCycleQC%256);
 }
 
 void setPDC1 (long dutyCyclePercent){
@@ -144,15 +140,7 @@ void setPDC3 (long dutyCyclePercent){
 	PDC3L=dutyCycleQC%256;
 }
 
-void printmsg(void)
-{
-    printf("***********************\r\n");
-    printf("-----MOTOR CONTROL-----\r\n");
-    printf("keys 0-9 adjust PWM    \r\n");
-    printf("key a    print encoder \r\n");
-    printf("***********************\r\n");           
-}
-
+void printmsg(void);
 
 
 #ifdef	__cplusplus
