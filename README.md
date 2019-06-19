@@ -37,6 +37,8 @@ This project simply controls two PWM channels on the microcontroller by sending 
 
 #### 1.1 Schematic diagram with explanations
 
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_1.png)
+
 *Figure 1: Schematic Diagram*
 
 The Schematic in Figure 1 illustrates how the PICkit 4 debugger, USB-to-TTL Serial Convertor, DC Motor with Encoders, motor driver, and other elements are connected to the PIC18 microcontroller. The microcontroller during program operation is power through the USB-to-TTL Serial Converter for the User PC. This device is used to send motor commands and read encoder values. The DC motor is connected directly a motor driver that is supplied with a separate 12 volt source. This moto driver receives PWM signals from the microcontroller over the PB0 port. The encoders on the DC motor are connected to pin 5 or QEA and pin 6 or QEB. The USB-to-TTL Serial Convertor TX and RX pins are connect to pins RX and TX respectively. The yellow LED with blink at each timer0 overflow interrupt and the white light connected the same PWM pin that controls the DC motor. The pink LED uses timer0 toggle about every 5 seconds. The diode across the DC motor help with the performance and response. The 20 MHz crystal was not necessary but will improve performance of USART.
@@ -79,11 +81,17 @@ Print a short manual on terminal for user to know how key presses control the mo
 
 #### 1.3 Block diagram shows the components and interactions
 
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_2.png)
+
 *Figure 2: Abstract Block Diagram*
 
 #### 1. 4 Flowchart shows the operation sequence
 
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_3.png)
+
 *Figure 3: Main Program and USART Interrupt*
+
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_4.png)
 
 *Figure 4: Timer0 Interrupt*
 
@@ -92,13 +100,22 @@ Print a short manual on terminal for user to know how key presses control the mo
 
 #### 2.1 List of parts and tools (name, model, source of purchasing, price)
 
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/table_1.png)
+
 *Table 1: Bill of Materials*
 
 #### 2.2 Wiring diagram
 
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_1.png)
+*Figure 1: Schematic Diagram*
+
 #### 2.3 Layout diagram
 
-Figure 6: Layout Diagram
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/figure_6.png)
+
+*Figure 6: Layout Diagram*
+
+#### 2.4 Software tools (name, version, configuration details)
 
 Hardware Platform: PIC18F4431-I/P
 
@@ -111,7 +128,6 @@ MPLAB Version: v5.15
 C Compiler Version: XC8 v2.05
 
 Serial Terminal: Putty
-
 
 ### EXPERIMENT RESULTS
 
