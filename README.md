@@ -187,11 +187,10 @@ http://www.dmi.unict.it/~santoro/teaching/lap1/slides/UART\_MCU.pdf
 - Encoder Cable Length: 20cm/7.87inch
 - Gross Weight: Approx. 100g
 
-
-
 **3.2 Complete software code.**
 
 [https://github.com/digitalhabitat/pic18f4431\_motor\_controller](https://github.com/digitalhabitat/pic18f4431_motor_controller)
 
-
 **3.3 A video of the product in operation.**
+
+![images](https://github.com/digitalhabitat/pic18f4431_motor_controller/blob/master/images/operation.gif)
